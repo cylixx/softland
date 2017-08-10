@@ -1,13 +1,24 @@
 package mx.com.softland;
 
+import java.util.UUID;
+
 /**
- * Hello world!
+ * Generate a unique number
  *
  */
-public class App 
+public class App
 {
+
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        App obj = new App();
+        System.out.println("Unique ID : " + obj.generateUniqueKey());
+    }
+
+    public String generateUniqueKey(){
+
+    	String id = UUID.randomUUID().toString();
+    	return id;
+
     }
 }
