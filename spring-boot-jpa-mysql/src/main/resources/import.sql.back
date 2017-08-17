@@ -1,0 +1,2 @@
+INSERT INTO user (id, folio, name, address, birthday, dateReg) VALUES (1, 10001, 'Picoro', 'Juan Escutia #150, Col. Centro, Toluca, México', '1983-12-21', '2017-08-01 12:20:18');
+INSERT INTO user (id, folio, name, address, birthday, dateReg) VALUES (2, 10002, 'Bulma', 'Gonzalez Camarena #2750, Col. Barrio Bravo, Santa Fé, México', '1979-06-10', '2017-08-01 13:25:18');
