@@ -2,6 +2,7 @@
 # Spring MVC Web Project Example 
   
 Create project with maven archetype and choose:
+  
 1046: maven-archetype-webapp (An archetype which contains a sample Maven Webapp project.)
 
 **Example:**  
