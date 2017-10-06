@@ -42,6 +42,9 @@ public class Student  {
 	}
 	
 	
+	/**
+	 * Compare by firstName property
+	 */
 	public static Comparator<Student> firstNameComparator = new Comparator<Student>() {
 		
 		public int compare(Student student1, Student student2) {
@@ -56,6 +59,9 @@ public class Student  {
 		}
 	};
 	
+	/**
+	 * Compare objects by 2 properties Marks and LastName
+	 */
 	public static Comparator<Student> marksAndLastNameComparator = new Comparator<Student>() {
 		
 		public int compare(Student student1, Student student2) {
