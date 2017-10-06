@@ -1,15 +1,20 @@
-package com.softland.example.comparator;
+package com.softland.example;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ExecuteComparator {
+import com.softland.example.comparator.MarkComparator;
+import com.softland.example.comparator.Student;
 
-	public static void main(String[] args) {
-
-		
-		List<Student> studentsList = new ArrayList<Student>();
+/**
+ * Hello world!
+ *
+ */
+public class AppComparator 
+{
+    public static void main( String[] args ) {
+    	List<Student> studentsList = new ArrayList<Student>();
 
 		studentsList.add(new Student("Marco", "Hinojosa", "A1", 100));
 		studentsList.add(new Student("Julia", "B", "A2", 70));
@@ -54,7 +59,5 @@ public class ExecuteComparator {
 		for (Student student : studentsList) {
 			System.out.println(student.toString());
 		}
-
-	}
-
+    }
 }
