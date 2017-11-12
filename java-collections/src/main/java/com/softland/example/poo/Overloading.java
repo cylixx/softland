@@ -17,6 +17,7 @@ public class Overloading {
 		return a + b;
 	}
 
+	//Overloading method add
 	public static int add(int a, int b, int c) {
 		return a + b + c;
 	}
