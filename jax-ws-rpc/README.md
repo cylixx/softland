@@ -1,13 +1,13 @@
 
-# JAX-WS 	– Document Style
+# JAX-WS 	– RPC Style
 
-**This example show you how to use JAX-WS to create a SOAP-based web service (document style) endpoint. ** 
+**This example show you how to use JAX-WS to create a SOAP-based web service (RPC style) endpoint. ** 
 
 
-#### wsgen command
+#### Java Web Service Client via wsimport tool
 
 > 
-Document style requires extra classes to run, you can use “wsgen” to generate all necessary Java artifacts (mapping classes, wsdl or xsd schema). The “wsgen” command is required to read a service endpoint implementation class :
+You can use “wsgen” to generate all necessary Java artifacts (mapping classes, wsdl or xsd schema). The “wsgen” command is required to read a service endpoint implementation class :
 
 
 `wsgen -verbose -keep -cp path_classes name_of_impl_class_with_package -s path_src_main_java`  
