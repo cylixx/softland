@@ -76,9 +76,13 @@ public class LoggingAspect {
 	
 	//@Around("execution(public * *(..)) && @annotation(com.mkyong.annotation.MyAnnotation)")
 	@Around("execution(public * *(..)) && @annotation(com.mkyong.annotation.MyAnnotation)")
+	//public void procede(ProceedingJoinPoint joinPoint, MyAnnotation mannotation) throws Throwable {
 	public void procede(ProceedingJoinPoint joinPoint) throws Throwable {
 	    MethodSignature signature = (MethodSignature) joinPoint.getSignature();
 	    Method method = signature.getMethod();
+	    
+	    System.out.println("Point cut {}" + joinPoint.toShortString());
+//	    System.out.println("MyAnnotation {}" + mannotation.value());
 
 	    if (method.isAnnotationPresent(MyAnnotation.class)) {
 		    MyAnnotation myAnnotation = method.getAnnotation(MyAnnotation.class);

@@ -1,0 +1,54 @@
+https://stackoverflow.com/questions/26883836/tomcat-8-maven-plugin-for-java-8
+
+
+In your pom.xml, add the tomcat plugin. (You can use this for both Tomcat 7 and 8):
+
+pom.xml
+
+<!-- Tomcat plugin -->  
+<plugin>  
+ <groupId>org.apache.tomcat.maven</groupId>  
+ <artifactId>tomcat7-maven-plugin</artifactId>  
+ <version>2.2</version>  
+ <configuration>  
+  <url>http:// localhost:8080/manager/text</url>  
+  <server>TomcatServer</server>    <!--  From maven > settings.xml  -->
+  <username>*yourtomcatusername*</username>  
+  <password>*yourtomcatpassword*</password>   
+ </configuration>   
+</plugin>   
+
+
+
+tomcat-users.xml
+
+<tomcat-users>
+    <role rolename="manager-gui"/>  
+    <role rolename="manager-script"/>   
+    <user username="admin" password="password" roles="manager-gui,manager-script" />  
+</tomcat-users>
+
+
+
+settings.xml (maven > conf)
+
+<servers>  
+    <server>
+       <id>TomcatServer</id>
+       <username>admin</username>
+       <password>password</password>
+    </server>
+</servers>  
+
+
+* deploy/re-deploy
+mvn tomcat7:deploy OR mvn tomcat7:redeploy
+
+
+
+
+Note:
+Tomcat manager should be running or properly setup, before you can use it with maven.
+Tested on Both Jdk 7/8 & Tomcat 7/8. (Works with Tomcat 8.5 and 9)
+
+
