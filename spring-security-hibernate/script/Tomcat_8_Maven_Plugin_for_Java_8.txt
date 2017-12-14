@@ -6,17 +6,19 @@ In your pom.xml, add the tomcat plugin. (You can use this for both Tomcat 7 and 
 pom.xml
 
 <!-- Tomcat plugin -->  
-<plugin>  
- <groupId>org.apache.tomcat.maven</groupId>  
- <artifactId>tomcat7-maven-plugin</artifactId>  
- <version>2.2</version>  
- <configuration>  
-  <url>http:// localhost:8080/manager/text</url>  
-  <server>TomcatServer</server>    <!--  From maven > settings.xml  -->
-  <username>*yourtomcatusername*</username>  
-  <password>*yourtomcatpassword*</password>   
- </configuration>   
-</plugin>   
+<plugin>
+	<groupId>org.apache.tomcat.maven</groupId>
+	<artifactId>tomcat7-maven-plugin</artifactId>
+	<version>2.2</version>
+	<configuration>
+		<server>TomcatServer</server>
+		<username>admin</username>
+		<password>admin</password>
+		<url>http://localhost:9080/manager/text</url>
+		<path>/${project.build.finalName}</path>
+		<update>true</update>
+	</configuration>
+</plugin>  
 
 
 
@@ -44,6 +46,8 @@ settings.xml (maven > conf)
 * deploy/re-deploy
 mvn tomcat7:deploy OR mvn tomcat7:redeploy
 
+* undeploy
+mvn tomcat7:undeploy
 
 
 
