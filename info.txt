@@ -1,0 +1,20 @@
+[Java tutorials]
+https://www.mkyong.com/
+
+[Patrones de diseño]
+http://java.ciberaula.com/articulo/diseno_patrones_j2ee
+https://github.com/LuisBurgos/design-patterns#abstract-factory
+
+[Spring]
+http://www.baeldung.com/
+
+
+[SSO OAuth 2]
+Simple Single Sign On with Spring Security OAuth2
+http://www.baeldung.com/sso-spring-security-oauth2
+
+OAuth 2 Developers Guide
+http://projects.spring.io/spring-security-oauth/docs/oauth2.html
+
+Spring Boot and OAuth2
+https://spring.io/guides/tutorials/spring-boot-oauth2/
