@@ -15,14 +15,13 @@ public class HelloMongoController {
 	@Autowired
 	private UsersRepository repository;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/users", method = RequestMethod.GET)
 	public ModelAndView helloWorld(ModelMap model) {
 
 		List users = repository.findAll();
 		ModelAndView modelAndView = new ModelAndView("index");
 		modelAndView.addObject("users", users);
 		return modelAndView;
-
 	}
 
 }
