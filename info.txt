@@ -18,3 +18,18 @@ http://projects.spring.io/spring-security-oauth/docs/oauth2.html
 
 Spring Boot and OAuth2
 https://spring.io/guides/tutorials/spring-boot-oauth2/
+
+Spring Security Reference
+https://docs.spring.io/spring-security/site/docs/5.0.0.BUILD-SNAPSHOT/reference/htmlsingle/
+
+
+[MongoDB]
+Using JPA with MongoDB and WildFly 
+http://www.mastertheboss.com/javaee/mongodb/using-jpa-with-mongodb-and-wildfly
+
+3 ways you can connect to MongoDB from WildFly - JBoss EAP
+http://www.mastertheboss.com/javaee/mongodb/3-ways-you-can-connect-to-mongodb-from-wildfly-jboss-eap
+
+Spring Data MongoDB Hello World with Spring MVC: Example
+https://dzone.com/articles/spring-data-mongodb-hello
+

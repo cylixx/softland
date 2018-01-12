@@ -1,0 +1,43 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+	http://www.springframework.org/schema/data/mongo">
+
+
+	<context:component-scan base-package="com.softland.example.controller" />
+	<context:component-scan base-package="com.softland.example.repositories" />
+
+	<!-- Configuration defining views files -->
+
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/views/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+
+	<!-- Factory bean that creates the Mongo instance -->
+		<bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
+			<!-- <property name="host" value="localhost" /> -->
+			<property name="host" value="10.10.115.95" />
+		</bean>
+
+		<!-- MongoTemplate for connecting and quering the documents in the database -->
+
+		<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+			<constructor-arg name="mongo" ref="mongo" />
+			<constructor-arg name="databaseName" value="dinnd" />
+		</bean>
+		<mongo:repositories base-package=com.softland.example.repositories" />
+		
+</beans>

@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 /* 
-   Create a Spring Security configuration file, and annotated with @EnableWebSecurity
+   4. Create a Spring Security configuration file, and annotated with @EnableWebSecurity
 
 	The equivalent of the Spring Security xml file :
 

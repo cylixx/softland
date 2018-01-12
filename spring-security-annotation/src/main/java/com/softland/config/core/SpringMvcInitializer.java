@@ -5,7 +5,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 import com.softland.config.AppConfig;
 
 /* 
-  Create a Initializer class, to load everything.
+  2. Create a Initializer class, to load everything.
   
   Note:
 	In Servlet 3.x container environment + Spring container will detect and loads the Initializer classes automatically.

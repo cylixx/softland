@@ -10,7 +10,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 
 /* 
-  Config class, define the view's technology and imports above SecurityConfig.java.
+  3. Config class, define the view's technology and imports above SecurityConfig.java.
   
   The equivalent of the Spring XML file :
   

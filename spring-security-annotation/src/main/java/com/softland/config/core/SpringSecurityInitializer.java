@@ -4,7 +4,7 @@ package com.softland.config.core;
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
 /* 
-   Create a Class extends AbstractSecurityWebApplicationInitializer, it will load the springSecurityFilterChain automatically.
+   1. Create a Class extends AbstractSecurityWebApplicationInitializer, it will load the springSecurityFilterChain automatically.
    
    The equivalent of Spring Security in web.xml file :
    
