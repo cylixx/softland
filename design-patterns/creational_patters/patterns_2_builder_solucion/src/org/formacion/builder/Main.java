@@ -11,11 +11,13 @@ public class Main {
                 .setMayor(37)
                 .setLugarTrabajo("Google")
                 .build();
+		System.out.println("madre: " + madre.toString());
 
 		Persona hijo = new Persona.Builder("Pedro")
                 .setMenor(4)
                 .setColegio("Colegio de Selva")
                 .build();
+		System.out.println("hijo: " + hijo.toString());
 		
 		// esta codigo NO debe compilar
 		/*

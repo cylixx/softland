@@ -1,5 +1,13 @@
 package org.formacion.builder;
 
+/*
+ 
+ [BUILDER Pattern]
+ Separate the construction of a complex object from its representation so that 
+ the same construction process can create different representations.
+ — GoF
+ 
+ */
 public class Persona {
 
 	private String nombre;
@@ -72,6 +80,12 @@ public class Persona {
 		public Persona build() {
 			return persona;
 		}
+	}
+
+	@Override
+	public String toString() {
+		return "Persona [nombre=" + nombre + ", edad=" + edad + ", municipio=" + municipio + ", colegio=" + colegio
+				+ ", lugarTrabajo=" + lugarTrabajo + "]";
 	}
 	
 }
