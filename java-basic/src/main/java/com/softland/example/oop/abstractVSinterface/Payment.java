@@ -19,6 +19,7 @@ package com.softland.example.oop.abstractVSinterface;
  *  
  *  Reference:
  *  https://stackoverflow.com/questions/761194/interface-vs-abstract-class-general-oo/33963650#33963650
+ *  https://stackoverflow.com/questions/18777989/how-should-i-have-explained-the-difference-between-an-interface-and-an-abstract
  */
 public interface Payment {
 

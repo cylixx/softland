@@ -15,10 +15,12 @@
 
 ------------------------------------------------------------
 
-## difference between an Interface and an Abstract class.
+## Difference between an Interface and an Abstract class.
 
   
->   Methods of a Java interface are implicitly abstract and cannot have implementations. A Java abstract class can have instance methods that implements a default behaviour.
+>   
+	Methods of a Java interface are implicitly abstract and cannot have implementations. 
+	A Java abstract class can have instance methods that implements a default behaviour.
 
     Variables declared in a Java interface are by default final. An abstract class may contain non-final variables.
 
@@ -49,9 +51,9 @@ Consider using interfaces if :
 
 In simple terms, I would like to use
 
-interface: To implement a contract by multiple unrelated objects
+**interface: To implement a contract by multiple unrelated objects** 
 
-abstract class: To implement the same or different behaviour among multiple related objects 
+**abstract class: To implement the same or different behaviour among multiple related objects**  
 _ 
 
 
