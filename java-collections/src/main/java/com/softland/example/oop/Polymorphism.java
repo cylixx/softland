@@ -1,5 +1,13 @@
-package com.softland.example.poo;
+package com.softland.example.oop;
 
+
+/*
+  Polimorfismo
+
+    Otro concepto de la OOP es el polimorfismo. Un objeto solamente tiene una forma (la que se le asigna cuando se construye ese objeto)
+    pero la referencia a objeto es polimórfica porque puede referirse a objetos de diferentes clases 
+    (es decir, la referencia toma múltiples formas). Para que esto sea posible debe haber una relación de herencia entre esas clases. 
+ */
 public class Polymorphism {
 	
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.softland.example.poo;
+package com.softland.example.oop;
 
 public class Overloading {
 
