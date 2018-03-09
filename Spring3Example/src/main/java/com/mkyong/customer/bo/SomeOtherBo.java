@@ -4,7 +4,7 @@ import com.mkyong.annotation.MyAnnotation;
 
 public interface SomeOtherBo {
 	
-	//@MyAnnotation("ABC")
+//	@MyAnnotation("ABC")
 	public String someMethod(String name);
 
 }

@@ -13,6 +13,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
 
+import com.actinver.eactinver.anonymous.web.ws.annotation.ValidateOperation;
 import com.mkyong.annotation.MyAnnotation;
 
 @Aspect
@@ -78,8 +79,11 @@ public class LoggingAspect {
 	@Around("execution(public * *(..)) && @annotation(com.mkyong.annotation.MyAnnotation)")
 	//public void procede(ProceedingJoinPoint joinPoint, MyAnnotation mannotation) throws Throwable {
 	public void procede(ProceedingJoinPoint joinPoint) throws Throwable {
+	    
 	    MethodSignature signature = (MethodSignature) joinPoint.getSignature();
-	    Method method = signature.getMethod();
+        Method method = signature.getMethod();
+        MyAnnotation anno = method.getAnnotation(MyAnnotation.class);
+	    
 	    
 	    System.out.println("Point cut {}" + joinPoint.toShortString());
 //	    System.out.println("MyAnnotation {}" + mannotation.value());
