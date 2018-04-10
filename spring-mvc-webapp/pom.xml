@@ -110,6 +110,20 @@
 					<path>/CounterWebApp</path>
 				</configuration>
 			</plugin> -->
+			<!-- Tomcat plugin -->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<server>TomcatServer</server>
+					<username>admin</username>
+					<password>admin</password>
+					<url>http://localhost:8089/manager/text</url>
+					<path>/${project.build.finalName}</path>
+					<update>true</update>
+				</configuration>
+			</plugin>  
 
 		</plugins>
 	</build>
