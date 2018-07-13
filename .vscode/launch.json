@@ -1,0 +1,291 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos 
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "java",
+            "name": "Debug (Launch)-App<Spring3Example>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.mkyong.core.App",
+            "projectName": "Spring3Example",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ReadAnnotationExample<Spring3Example>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.mkyong.core.ReadAnnotationExample",
+            "projectName": "Spring3Example",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ArrayToCollection<java-basic>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.collections.ArrayToCollection",
+            "projectName": "java-basic",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CollectionComparison<java-basic>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.collections.CollectionComparison",
+            "projectName": "java-basic",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CollectionSet<java-basic>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.collections.CollectionSet",
+            "projectName": "java-basic",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CollectionToArray<java-basic>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.collections.CollectionToArray",
+            "projectName": "java-basic",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CollectionsUse<java-basic>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.collections.CollectionsUse",
+            "projectName": "java-basic",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ReversingCollection<java-basic>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.collections.ReversingCollection",
+            "projectName": "java-basic",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Overloading<java-basic>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.oop.Overloading",
+            "projectName": "java-basic",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Overriding<java-basic>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.oop.Overriding",
+            "projectName": "java-basic",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Polymorphism<java-basic>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.oop.Polymorphism",
+            "projectName": "java-basic",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AppExecute<java-basic>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.oop.abstractclass.AppExecute",
+            "projectName": "java-basic",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AppExecute<java-basic>(1)",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.oop.polymorphism.AppExecute",
+            "projectName": "java-basic",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TwoThreadAlive<java-basic>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.thread.TwoThreadAlive",
+            "projectName": "java-basic",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-App<java-numberGenerator>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "mx.com.softland.App",
+            "projectName": "java-numberGenerator",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AppComparator<java-objComparator>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.AppComparator",
+            "projectName": "java-objComparator",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HelloWorldClient<jax-ws-document>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.client.HelloWorldClient",
+            "projectName": "jax-ws-document",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HelloWorldPublisher<jax-ws-document>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.endpoint.HelloWorldPublisher",
+            "projectName": "jax-ws-document",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HelloWorldClient<jax-ws-rpc>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.client.HelloWorldClient",
+            "projectName": "jax-ws-rpc",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HelloWorldPublisher<jax-ws-rpc>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.endpoint.HelloWorldPublisher",
+            "projectName": "jax-ws-rpc",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ExecuteApp<spring-boot-jpa-mysql>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.ExecuteApp",
+            "projectName": "spring-boot-jpa-mysql",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-App<spring-mongodb-helloworld>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.App",
+            "projectName": "spring-mongodb-helloworld",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AuthorizationServerApplication<spring-security-sso-auth-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.baeldung.config.AuthorizationServerApplication",
+            "projectName": "spring-security-sso-auth-server",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-UiApplication<spring-security-sso-ui-2>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.baeldung.config.UiApplication",
+            "projectName": "spring-security-sso-ui-2",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-UiApplication<spring-security-sso-ui>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.baeldung.config.UiApplication",
+            "projectName": "spring-security-sso-ui",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Attach)",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 0
+        }
+    ]
+}
