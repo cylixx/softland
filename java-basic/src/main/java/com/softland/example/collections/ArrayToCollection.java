@@ -35,7 +35,6 @@ public class ArrayToCollection {
 	public static void main(String[] args) throws IOException {
 
 		int[] arr = { 64, 34, 25, 12, 22, 11, 90 };   //inicializa array
-        
 		
 		//=========== Array to List =================
 		// 1. Naive form
@@ -233,5 +232,6 @@ public class ArrayToCollection {
         int[] newArr = rs.stream().mapToInt(i->i).toArray();
         return newArr;
     }
+    
 
 }
