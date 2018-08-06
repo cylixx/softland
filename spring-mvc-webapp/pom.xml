@@ -111,6 +111,7 @@
 				</configuration>
 			</plugin> -->
 			<!-- Tomcat plugin -->
+			<!-- NOTA: la url siempre es la de abajo, solo cambia el puerto donde este el tomcat local-->
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
@@ -119,7 +120,7 @@
 					<server>TomcatServer</server>
 					<username>admin</username>
 					<password>admin</password>
-					<url>http://localhost:8089/manager/text</url>
+					<url>http://localhost:9080/manager/text</url>
 					<path>/${project.build.finalName}</path>
 					<update>true</update>
 				</configuration>
