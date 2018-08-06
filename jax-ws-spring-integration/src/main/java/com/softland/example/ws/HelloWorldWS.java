@@ -18,9 +18,7 @@ public class HelloWorldWS {
 
 	@WebMethod(operationName = "getHelloWorld")
 	public String getHelloWorld() {
-
 		return helloWorldBo.getHelloWorld();
-
 	}
 
 }
