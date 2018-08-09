@@ -4,7 +4,6 @@
     // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
         {
             "type": "java",
             "name": "Debug (Launch)-App<Spring3Example>",
@@ -145,6 +144,50 @@
             "console": "internalConsole",
             "stopOnEntry": false,
             "mainClass": "com.softland.example.oop.polymorphism.AppExecute",
+            "projectName": "java-basic",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-BubbleSort<java-basic>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.sort.BubbleSort",
+            "projectName": "java-basic",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HeapSort<java-basic>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.sort.HeapSort",
+            "projectName": "java-basic",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-InsertionSort<java-basic>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.sort.InsertionSort",
+            "projectName": "java-basic",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SelectionSort<java-basic>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.softland.example.sort.SelectionSort",
             "projectName": "java-basic",
             "args": ""
         },
