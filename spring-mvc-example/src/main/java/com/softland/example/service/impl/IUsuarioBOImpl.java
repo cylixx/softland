@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.softland.example.dto.Usuario;
+import com.softland.example.model.Usuario;
 import com.softland.example.service.IUsuarioBO;
 
 @Service
@@ -22,6 +22,12 @@ public class IUsuarioBOImpl implements IUsuarioBO {
 		list.add("marquito23");
 		list.add("marquitoX");
 		return list;
+	}
+
+	@Override
+	public Usuario altaUsuario(Usuario usuario) {
+		// aqui guardamos usuario
+		return usuario;
 	}
 
 }

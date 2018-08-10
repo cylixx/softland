@@ -1,4 +1,4 @@
-package com.softland.example.dto;
+package com.softland.example.model;
 
 import java.util.List;
 
