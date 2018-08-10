@@ -1,6 +1,7 @@
 package com.softland.example.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -11,12 +12,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import com.softland.example.model.InfoLogin;
 import com.softland.example.model.Usuario;
 import com.softland.example.service.IUsuarioBO;
 
-@Controller
+//@Controller
+@RestController
 public class UsuarioController {
 
 	@Autowired
@@ -52,13 +56,33 @@ public class UsuarioController {
 		return new ResponseEntity<InfoLogin>(infoLogin, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/usuario/alta", method=RequestMethod.POST, produces=MediaType.APPLICATION_JSON_VALUE, consumes="application/json")
-	public ResponseEntity<Usuario> altaUsuario(@RequestBody Usuario usuario) {
+	
+	
+	@RequestMapping(value="/alta", method=RequestMethod.POST)
+	public ResponseEntity<Void> altaUsuario(@RequestBody Usuario usuario, UriComponentsBuilder ucBuilder) {
+		System.out.println("Creating User " + usuario.getName());
 		
-		if (usuario == null) {
-			usuario = new Usuario("marquito", "Marco Hinojosa");
-		}
-		return new ResponseEntity<Usuario>(usuarioBO.altaUsuario(usuario), HttpStatus.CREATED);
+//		if (userService.isUserExist(user)) {
+//            System.out.println("A User with name " + user.getName() + " already exist");
+//            return new ResponseEntity<Void>(HttpStatus.CONFLICT);
+//        }
+ 
+		usuarioBO.altaUsuario(usuario);
+ 
+        HttpHeaders headers = new HttpHeaders();
+        headers.setLocation(ucBuilder.path("/usuario/alta1/{id}").buildAndExpand(usuario.getLogin()).toUri());
+        return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 	}
+	
+	
+	//@RequestMapping(value="/usuario/alta", method=RequestMethod.POST, produces=MediaType.APPLICATION_JSON_VALUE, consumes="application/json")
+		@RequestMapping(value="/usuario/alta", method=RequestMethod.POST, consumes="application/json", produces="application/json;charset=UTF-8")
+		public ResponseEntity<Usuario> altaUsuario2(@RequestBody Usuario usuario) {
+			
+			if (usuario == null) {
+				usuario = new Usuario("marquito", "Marco Hinojosa");
+			}
+			return new ResponseEntity<Usuario>(usuarioBO.altaUsuario(usuario), HttpStatus.CREATED);
+		}
 
 }

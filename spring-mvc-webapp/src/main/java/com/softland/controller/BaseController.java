@@ -1,10 +1,13 @@
 package com.softland.controller;
 
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -37,11 +40,19 @@ public class BaseController {
 		return VIEW_INDEX;
 	}
 	
+//	@RequestMapping(value = "/user", method = RequestMethod.POST)
+//	public String saveOrUpdateUser(@ModelAttribute("userForm") User user, ModelMap model) {
+//		logger.debug("saveOrUpdateUser() : {}", user);
+//		model.addAttribute("user", user);
+//		return "user";
+//	}
+	
 	@RequestMapping(value = "/user", method = RequestMethod.POST)
-	public String saveOrUpdateUser(@ModelAttribute("userForm") User user, ModelMap model) {
+	public ResponseEntity<Void> saveOrUpdateUser2(@RequestBody User user) {
 		logger.debug("saveOrUpdateUser() : {}", user);
-		model.addAttribute("user", user);
-		return "user";
+//		model.addAttribute("user", user);
+//		return "user";
+		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
 
 }

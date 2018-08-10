@@ -11,7 +11,8 @@
 
 	<properties>
 		<jdk.version>1.7</jdk.version>
-		<spring.version>4.1.1.RELEASE</spring.version>
+		<spring.version>4.2.0.RELEASE</spring.version>
+		<jackson.version>2.5.3</jackson.version>
 	</properties>
 
 	<dependencies>
@@ -23,7 +24,7 @@
 		</dependency>
 
 		<!-- spring -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
@@ -33,32 +34,44 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>${spring.version}</version>
-		</dependency>
+		</dependency> -->
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
+		
 		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- <dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
 			<version>6.0</version>
 			<scope>provided</scope>
-		</dependency> 
+		</dependency>  -->
 
 		<!-- serializar a json -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.11</version>
-		</dependency>
+		</dependency> -->
 
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.5.3</version>
+			<version>${jackson.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
 		</dependency>
 
 	</dependencies>
@@ -76,6 +89,18 @@
 					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
+			<!-- we don’t even include web.xml in our project -->
+			<!-- we will need to configure this plugin in order to avoid maven failure to build war package -->
+			<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.4</version>
+					<configuration>
+						<warSourceDirectory>src/main/webapp</warSourceDirectory>
+						<warName>${project.build.finalName}</warName>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+					</configuration>
+				</plugin>
 			<!-- Tomcat plugin -->
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
