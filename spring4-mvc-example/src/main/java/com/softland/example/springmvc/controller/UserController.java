@@ -32,6 +32,7 @@ public class UserController {
 		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
 	}
 	
+	// Save user
 	@RequestMapping(value = "/user/", method = RequestMethod.POST )
 	public ResponseEntity<Void> createUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
 		System.out.println("Creating user " + user.getName());
