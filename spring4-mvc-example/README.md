@@ -11,9 +11,12 @@ Template for Spring 4 MVC crud.
 ```shell
 $ mvn jetty:run
 ```
-listAllUsers ```http://localhost:8080/spring4-mvc-example/user/```
-createUser ```http://localhost:8080/spring4-mvc-example/user/```
-
+```shell
+* listAllUsers 
+   http://localhost:8080/spring4-mvc-example/user/
+* createUser 
+   http://localhost:8080/spring4-mvc-example/user/
+```
 
 ###3. To import this project into Eclipse IDE
 1. ```$ mvn eclipse:eclipse```
