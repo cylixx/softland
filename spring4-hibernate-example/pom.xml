@@ -10,6 +10,7 @@
 	<url>http://maven.apache.org</url>
 	
 	<properties>
+		<jdk.version>1.8</jdk.version>
         <springframework.version>4.0.6.RELEASE</springframework.version>
         <hibernate.version>4.3.6.Final</hibernate.version>
         <mysql.connector.version>5.1.31</mysql.connector.version>
@@ -44,6 +45,12 @@
             <artifactId>spring-orm</artifactId>
             <version>${springframework.version}</version>
         </dependency>
+        <!-- Spring Data module for JPA repositories. -->
+        <dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-jpa</artifactId>
+		    <version>2.0.8.RELEASE</version>
+		</dependency>
  
         <!-- Hibernate -->
         <dependency>
@@ -73,18 +80,28 @@
             <version>3.0.0.CR1</version>
         </dependency>
 	</dependencies>
+	
 	<build>
         <pluginManagement>
             <plugins>
-                <plugin>
+                <!-- <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.2</version>
                     <configuration>
-                        <source>1.6</source>
+                        <source>1.</source>
                         <target>1.6</target>
                     </configuration>
-                </plugin>
+                </plugin> -->
+                <plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.3</version>
+					<configuration>
+						<source>${jdk.version}</source>
+						<target>${jdk.version}</target>
+					</configuration>
+				</plugin>
             </plugins>
         </pluginManagement>
     </build>
