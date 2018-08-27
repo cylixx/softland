@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+
+<hibernate-mapping>
+	
+	<class name="com.softland.example.model.Employee" table="EMPLOYEE">
+		<meta attribute="class-description">This class contains the employee detail.</meta>
+		<id name="id" column="id" type="int">
+			<generator class="native" />
+		</id>
+		<property name="name" column="name" type="string" />
+		<property name="joiningDate" column="joining_date" type="timestamp"/>
+		<property name="salary" column="salary" type="big_decimal" />
+		<property name="ssn" column="ssn" type="string" />
+	</class>
+
+</hibernate-mapping>  
