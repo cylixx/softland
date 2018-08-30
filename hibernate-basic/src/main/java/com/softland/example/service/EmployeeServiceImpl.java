@@ -9,7 +9,6 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-//import com.softland.example.hibernate.Employee;
 import com.softland.example.hibernate.HibernateUtil;
 import com.softland.example.model.Employee;
 

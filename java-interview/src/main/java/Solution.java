@@ -1,18 +1,41 @@
-/*
- *
- * https://github.com/Java-aid/Hackerrank-Solutions#algorithms
- * https://www.hackerrank.com/faq
- * https://www.hackerrank.com/environment/sample-problem
- */
-
 import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
 public class Solution {
-    public static void main(String args[] ) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String line = br.readLine();
-        int N = Integer.parseInt(line);
-        for (int i = 0; i < N; i++) {
-            System.out.println("hello world");
-        }
-    }
+
+	// Complete the primality function below.
+	static String primality(int n) {
+
+		return "Test result!";
+	}
+
+	private static final Scanner scanner = new Scanner(System.in);
+
+	public static void main(String[] args) throws IOException {
+		// Escribe el resultado en un archivo
+		//BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+		String output_path = System.getenv("HOME") + "/Descargas/temporal" + "/Solution.txt";
+		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(output_path));
+
+		int p = scanner.nextInt();
+		scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+		for (int pItr = 0; pItr < p; pItr++) {
+			int n = scanner.nextInt();
+			scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+			String result = primality(n);
+
+			bufferedWriter.write(result);
+			bufferedWriter.newLine();
+		}
+
+		bufferedWriter.close();
+		scanner.close();
+	}
 }
