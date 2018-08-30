@@ -30,7 +30,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @author Deepak
+ * @author cylixx
  *
  */
 public class BuyingShowTickets {
