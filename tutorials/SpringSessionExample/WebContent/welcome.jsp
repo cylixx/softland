@@ -24,6 +24,8 @@
 			}
 	%>
 	<form method="post" action="<%=request.getContextPath()%>/customServlet">
+		<input type="text" name = "userName" >
+		<br>
 		<input type="submit" value="View My Name"/>
 		<input type="hidden" name="_s" value="<%=additionalURL%>"/>
 	
