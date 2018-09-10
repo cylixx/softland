@@ -1,12 +1,13 @@
 
 # Spring Session Example 
+
+Este tutorial va a mostrar cómo utilizar Spring Session, en concreto, la sesión en cluster.
+
   
 Create project with maven archetype and choose:
-  
 1046: maven-archetype-webapp (An archetype which contains a sample Maven Webapp project.)
 
 **Example:**  
-  
 mvn archetype:generate -DgroupId=com.softland.example.web -DartifactId=spring-mvc-webapp -DarchetypeArtifactId=maven-archetype-webapp -DinterativeMode=false
 
 
@@ -21,3 +22,8 @@ mvn eclipse:eclipse -Dwtpversion=2.0
  
   
 For convenience, declares maven-eclipse-plugin and configure wtpversion to avoid typing the parameter -Dwtpversion=2.0
+
+
+------------------------------------------------------------
+
+[Spring Session](https://www.adictosaltrabajo.com/tutoriales/tutorial-de-spring-session/ "Spring Session") 

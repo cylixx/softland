@@ -130,7 +130,7 @@
 					<name>${project.build.finalName}.war</name>
 				</configuration>
 			</plugin>
-			<!-- Tomcat plugin, to run:   mvn tomcat7:deploy -->
+			<!-- Tomcat plugin, to run:  mvn tomcat7:deploy -->
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
