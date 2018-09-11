@@ -152,7 +152,9 @@ public class Anagram {
 
 	
 	public static void main(String[] args) throws IOException {
-		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+//		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+		String output_path = System.getenv("HOME") + "/Descargas/temporal" + "/Solution.txt";
+		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(output_path));
 
 		int q = scanner.nextInt();
 		scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
