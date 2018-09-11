@@ -27,5 +27,9 @@ $ mvn tomcat7:deploy
   
 
 ------------------------------------------------------------
-[Spring Session + Redis + Servlet Integration Example](https://www.concretepage.com/spring-session/spring-session-redis-servlet-integration-example "Spring Session + Redis + Servlet Integration Example") 
+
+*   [Spring Session + Redis + Servlet Integration Example](https://www.concretepage.com/spring-session/spring-session-redis-servlet-integration-example "Spring Session + Redis + Servlet Integration Example")
+*   [Guide to Spring Session](https://www.javadevjournal.com/spring/spring-session/ "title") 
+
+ 
 
