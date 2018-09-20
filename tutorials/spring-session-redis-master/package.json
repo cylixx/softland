@@ -1,0 +1,28 @@
+{
+  "name": "spring-session-redis",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Spring Session Redis",
+  "main": "index.js",
+  "dependencies": {
+     "bower": "~1.7.2",
+     "grunt": "~0.4.5",
+     "grunt-cli": "~0.1.13"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arpitaggarwal/spring-session-redis.git"
+  },
+  "scripts": {
+    "test": "echo no test specified"
+  },
+  "author": "ArpitAggarwal",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-bower-concat": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-install-dependencies": "^0.2.0"
+  }
+}

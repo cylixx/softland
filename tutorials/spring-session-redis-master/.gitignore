@@ -1,0 +1,10 @@
+.classpath
+.project
+.settings/
+.mvn
+target/
+node/
+node_modules/
+bower_components/
+app/
+src/main/webapp/dist
