@@ -23,20 +23,22 @@ import org.springframework.context.annotation.Import;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
+import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 //@Import(EmbeddedRedisConfig.class)
-@Configuration
-@ComponentScan(basePackages = "com.softland.example.*")
-@EnableRedisHttpSession // <1>
-@EnableWebMvc
+//@Import({SecurityConfig.class})
 //@EnableWebMvc
+@Configuration
+@EnableRedisHttpSession // <1>
+@ComponentScan(basePackages = "com.softland.example.*")
 public class Config extends WebMvcConfigurerAdapter{
-//public class Config extends WebMvcConfigurerAdapter{
+//public class Config {
 
 //	@Bean
 //	public LettuceConnectionFactory connectionFactory() {
@@ -48,6 +50,18 @@ public class Config extends WebMvcConfigurerAdapter{
 	}
 	
 	
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/assets/**").addResourceLocations("/WEB-INF/assets/");
+	}
+	
+//	@Bean
+//	public ViewResolver viewResolver() {
+//		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+//		viewResolver.setViewClass(JstlView.class);
+//		viewResolver.setPrefix("/WEB-INF/views/");
+//		viewResolver.setSuffix(".jsp");
+//		return viewResolver;
+//	}
 	@Bean
 	public UrlBasedViewResolver setupViewResolver() {
 		UrlBasedViewResolver resolver = new UrlBasedViewResolver();
@@ -55,10 +69,6 @@ public class Config extends WebMvcConfigurerAdapter{
 		resolver.setSuffix(".jsp");
 		resolver.setViewClass(JstlView.class);
 		return resolver;
-	}
-
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/assets/**").addResourceLocations("/WEB-INF/assets/");
 	}
 	
 }

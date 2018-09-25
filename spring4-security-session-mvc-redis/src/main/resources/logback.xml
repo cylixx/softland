@@ -7,7 +7,7 @@
 
 	<!-- <logger name="org.springframework.security" level="DEBUG"/> -->
 
-	<root level="INFO">
+	<root level="DEBUG">
 	<appender-ref ref="STDOUT" />
 	</root>
 

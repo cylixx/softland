@@ -27,6 +27,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/session")
 public class SessionServlet extends HttpServlet {
 
+	private static final long serialVersionUID = 2878267318695777395L;
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
@@ -35,6 +37,5 @@ public class SessionServlet extends HttpServlet {
 		req.getSession().setAttribute(attributeName, attributeValue);
 		resp.sendRedirect(req.getContextPath() + "/");
 	}
-
-	private static final long serialVersionUID = 2878267318695777395L;
+	
 }

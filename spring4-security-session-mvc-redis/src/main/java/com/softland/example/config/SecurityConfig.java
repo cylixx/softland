@@ -17,20 +17,26 @@
 package com.softland.example.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.web.savedrequest.NullRequestCache;
+import org.springframework.session.web.http.HeaderHttpSessionStrategy;
+import org.springframework.session.web.http.HttpSessionStrategy;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
 /**
- * @author Rob Winch
+ * @author mhinojosa
  */
-//@Configuration
 @EnableWebSecurity
-//public class SecurityConfig extends WebSecurityConfigurerAdapter{
-public class SecurityConfig {
+public class SecurityConfig extends WebSecurityConfigurerAdapter{
+//public class SecurityConfig {
 	
 //	@Override
 //	protected void configure(HttpSecurity http) throws Exception {
@@ -38,9 +44,40 @@ public class SecurityConfig {
 //		super.configure(http);
 //	}
 	
-	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		//auth.inMemoryAuthentication().withUser(User.withUsername("user").password("{noop}password").roles("USER").build());
-		auth.inMemoryAuthentication().withUser("marquito").password("miclave").roles("USER");
-	}
+	
+//	@Autowired
+//	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+//		//auth.inMemoryAuthentication().withUser(User.withUsername("user").password("{noop}password").roles("USER").build());
+//		auth.inMemoryAuthentication().withUser("marquito").password("miclave").roles("USER");
+//	}
+	
+	@Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		//simply prefix {noop} to your passwords in order for the DelegatingPasswordEncoder use the 
+		//NoOpPasswordEncoder to validate these passwords.
+		//NoOpPasswordEncoder for inMemoryAuthentication
+        auth.inMemoryAuthentication().withUser("user").password("{noop}password").roles("USER");
+        
+        //Encryp password inMemoryAuthentication
+//        User.withDefaultPasswordEncoder().username("user").password("user").roles("USER").build();
+        
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            .authorizeRequests()
+            .anyRequest().authenticated()
+            .and()
+            .requestCache()
+            .requestCache(new NullRequestCache())
+            .and()
+            .httpBasic();
+    }
+
+    @Bean
+    public HttpSessionStrategy httpSessionStrategy() {
+        return new HeaderHttpSessionStrategy();
+    }
+	
 }
