@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.actinver.eactinver.frontend</groupId>
+	<artifactId>management-front-microservice</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>management-front-microservice</name>
+	<url>http://maven.apache.org</url>
+	
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.3.RELEASE</version>
+	</parent>
+	
+	<!-- <properties>
+		<spring-boot.version>1.2.3.RELEASE</spring-boot.version>
+		<spring-boot.starter.security.version>1.2.3.RELEASE</spring-boot.starter.security.version>
+		<spring.session.data.redis.version>1.0.0.RELEASE</spring.session.data.redis.version>
+	</properties> -->
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session-data-redis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.github.kstyrc</groupId>
+		    <artifactId>embedded-redis</artifactId>
+		    <version>0.6</version>
+	    </dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin><!-- Include if you want to make an executable jar[FAT JAR which 
+					includes all dependencies along with sprinboot loader] that you can run on 
+					commandline using java -jar NAME -->
+					<!-- If you are not including it, result would be just a regular jar.
+                You could run the project using mvn spring-boot:run [on project root directory]-->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
