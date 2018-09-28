@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HelloController {
  
-    @RequestMapping("/")
+    @RequestMapping("/hello")
     String home(ModelMap modal) {
         modal.addAttribute("title", "Dear User");
         modal.addAttribute("message", "Welcome to eactinver-management");
