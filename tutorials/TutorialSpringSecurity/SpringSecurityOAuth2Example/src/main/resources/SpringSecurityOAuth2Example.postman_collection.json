@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "ee6c10b3-b6a9-463b-8e3e-bf691d81fdae",
+		"name": "SpringSecurityOAuth2Example",
+		"description": "Secure Spring REST API using OAuth2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "accessWithoutAnyAuth",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": ""
+				},
+				"description": "ry to access a resource without any auth info, wil get a 401."
+			},
+			"response": []
+		},
+		{
+			"name": "accessWithAccess_token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:9080/SpringSecurityOAuth2Example/user/?access_token=60c3b0f4-57e6-4cc6-a11f-ad3df642f240",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"SpringSecurityOAuth2Example",
+						"user",
+						""
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "60c3b0f4-57e6-4cc6-a11f-ad3df642f240"
+						}
+					]
+				},
+				"description": "ry to access a resource without any auth info, wil get a 401."
+			},
+			"response": []
+		},
+		{
+			"name": "accessAuthClientCredentials",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "my-trusted-client",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:9080/SpringSecurityOAuth2Example/oauth/token?grant_type=password&username=bill&password=abc123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"SpringSecurityOAuth2Example",
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						},
+						{
+							"key": "username",
+							"value": "bill"
+						},
+						{
+							"key": "password",
+							"value": "abc123"
+						}
+					]
+				},
+				"description": "ry to access a resource without any auth info, wil get a 401."
+			},
+			"response": []
+		},
+		{
+			"name": "refreshToken",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "my-trusted-client",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:9080/SpringSecurityOAuth2Example/oauth/token?grant_type=refresh_token&refresh_token=8b2359cc-d569-44a6-b2e5-f6d459f5fe38",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"SpringSecurityOAuth2Example",
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token"
+						},
+						{
+							"key": "refresh_token",
+							"value": "8b2359cc-d569-44a6-b2e5-f6d459f5fe38"
+						}
+					]
+				},
+				"description": "ry to access a resource without any auth info, wil get a 401."
+			},
+			"response": []
+		}
+	]
+}

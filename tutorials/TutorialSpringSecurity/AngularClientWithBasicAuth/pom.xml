@@ -1,0 +1,94 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.websystique.springmvc</groupId>
+	<artifactId>AngularClientWithBasicAuth</artifactId>
+	<packaging>war</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>AngularClientWithBasicAuth Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	
+	<properties>
+		<jdk.version>1.8</jdk.version>
+		<servletapi.version>3.1.0</servletapi.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<finalName>AngularClientWithBasicAuth</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+
+			<!-- Eclipse project -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<!-- Always download and attach dependencies source code -->
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>false</downloadJavadocs>
+					<!-- Avoid type mvn eclipse:eclipse -Dwtpversion=2.0 -->
+					<wtpversion>2.0</wtpversion>
+					<wtpContextName>${project.build.finalName}</wtpContextName>
+				</configuration>
+			</plugin>
+
+			<!-- Deploy to WildFly, to run: mvn wildfly:deploy -->
+			<plugin>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+				<version>1.1.0.Alpha5</version>
+				<configuration>
+					<hostname>127.0.0.1</hostname>
+					<port>9990</port>
+					<username>admin</username>
+					<password>admin</password>
+					<name>${project.build.finalName}.war</name>
+				</configuration>
+			</plugin>
+			<!-- Tomcat plugin, to run:  mvn tomcat7:deploy -->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<server>TomcatServer</server>
+					<username>admin</username>
+					<password>admin</password>
+					<url>http://localhost:9080/manager/text</url>
+					<path>/${project.build.finalName}</path>
+					<update>true</update>
+				</configuration>
+			</plugin>
+			<!-- Deploy to Jetty, to run: mvn jetty:run -->
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.2.11.v20150529</version>
+				<configuration>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<webApp>
+						<contextPath>/${project.build.finalName}</contextPath>
+					</webApp>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
