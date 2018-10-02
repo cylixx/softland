@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "d029d5f6-d90d-4082-907e-f6f6a5bde831",
+		"name": "oauth2-with-jdbc-master",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "web",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8181/oauth/token?grant_type=password&username=dazito&password=dazito.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						},
+						{
+							"key": "username",
+							"value": "dazito"
+						},
+						{
+							"key": "password",
+							"value": "dazito.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refreshToken",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "web",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8181/oauth/token?grant_type=refresh_token&refresh_token=b895f59d-36cc-4858-a0db-14aaadf8ad3b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token"
+						},
+						{
+							"key": "refresh_token",
+							"value": "b895f59d-36cc-4858-a0db-14aaadf8ad3b"
+						}
+					]
+				},
+				"description": "ry to access a resource without any auth info, wil get a 401."
+			},
+			"response": []
+		},
+		{
+			"name": "account_info",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8181/account/?access_token=8d2862a3-42e8-4611-a02c-529bee5acf53",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"account",
+						""
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "8d2862a3-42e8-4611-a02c-529bee5acf53"
+						}
+					]
+				},
+				"description": "ry to access a resource without any auth info, wil get a 401."
+			},
+			"response": []
+		},
+		{
+			"name": "health",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8181/account/?access_token=7f3a7af2-4afb-4463-acc2-bd47eae4dfce",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"account",
+						""
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "7f3a7af2-4afb-4463-acc2-bd47eae4dfce"
+						}
+					]
+				},
+				"description": "ry to access a resource without any auth info, wil get a 401."
+			},
+			"response": []
+		},
+		{
+			"name": "loggers",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8181/loggers?access_token=80f834dd-1fd9-40a5-9c15-908432207698",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"loggers"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "80f834dd-1fd9-40a5-9c15-908432207698"
+						}
+					]
+				},
+				"description": "ry to access a resource without any auth info, wil get a 401."
+			},
+			"response": []
+		}
+	]
+}

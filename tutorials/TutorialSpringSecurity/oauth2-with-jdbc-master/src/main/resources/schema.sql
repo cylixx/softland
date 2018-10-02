@@ -1,3 +1,7 @@
+-- for fixx error: [42000][1071] Specified key was too long; max key length is 767 bytes
+-- DROP DATABASE IF EXISTS <YOUR_DATABASE_NAME>;
+-- CREATE DATABASE <YOUR_DATABAE_NAME> DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+
 create table if not exists oauth_client_details (
   client_id VARCHAR(255) PRIMARY KEY,
   resource_ids VARCHAR(255),
@@ -62,3 +66,12 @@ create table if not exists ClientDetails (
   additionalInformation VARCHAR(4096),
   autoApproveScopes VARCHAR(255)
 );
+
+-- ====================================================
+-- Users table (it can be in another database)
+create table if not exists account (
+  id INTEGER,
+  username VARCHAR(255),
+  password VARCHAR(255)
+);
+

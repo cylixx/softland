@@ -70,6 +70,10 @@
 			</plugin>
 		</plugins>
 	</build>
+	<!-- To run app:  mvn spring-boot:run  -->
+	<!--  
+		curl -i -X POST -H "Authorization:Bearer 1711f43c-2ba7-4709-beba-22eda1291a1a" "http://localhost:8181/account"
+	-->
 
 
 </project>
