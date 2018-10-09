@@ -16,10 +16,37 @@
 
 # TIPOS DE DATOS (VARIABLES) EN JAVA.
 
-![Optional Text](/java_types.jpg)
-![alt text](https://lh3.googleusercontent.com/hRueCaz5s9g02I5e6Mem856vbwJVHToZSkTCTcIoe5zHRFl2L9Pty_ukgQMpz0gY3zFqI2XSz44mmka21aLNn4F6hCMIYbP9JGyoHjGD-MloF67goRJXBxL0q425gtAsGJVKo_Vc9zWaOKJVTCqIW7rpNkef-a3K6-nnMKuQ3SXavksl16AYMCr8k5D39jLtqvY-4t9i8plbfvEtzwmYj-rBekuWlDiUg1hWUzKVTMMsqIVFF16AibEAF5TUOnvV1mgoz7IownisxBYzJSHAzsKflse7-pPlVjgRy6hpUXeHerUmEXQA9doua7sg8r0NjAEEEa4FIwiHGZRzhNJzNlUkgt5a1eMssM9wgyER7o4UVsMW7IhHhB_IxxbtgKMj2lgRfNgQ7KUmUxb_J7kr1qf6OkbVDFK-W9B884-YlFnG7N0h4YbVDaUZWZLeWyUg8W8JwJPxG_B1oCDcRcujEGm1gkP7vYVBdfS9RkwU6s_P8wQdHNaLvWxWATPgYLxxhj7Ts1YHkxkW48k87gff3ms0hYe3Z3atKHy-x_SSOm0QrNXLgr-t_lOFfnk0tTwPCKNbM5BN14rKPgYuhm-fiFSSTcZMHisRzDULb_Tr3h7ADlu_FufB=w607-h882-no)
+![altText](src/main/resources/java_types.jpg "Tipos de datos en Java") 
+
+  
+
+# Modificadores de acceso en Java
+
+
+*   **private** 
+
+> El modificador private en Java es el más restrictivo de todos, básicamente cualquier elemento de una clase que sea privado puede ser accedido únicamente por la misma clase por nada más. Es decir, si por ejemplo, un atributo es privado solo puede ser accedido por lo métodos o constructores de la misma clase. 
+
+
+*   **default**
+
+> Java nos da la opción de no usar un modificador de acceso y al no hacerlo, el elemento tendrá un acceso conocido como defaulto acceso por defecto que permite que tanto la propia clase como las clases del mismo paquete accedan a dichos componentes
+ 
+*	**protected** 
+
+> El modificador de acceso protected nos permite acceso a los componentes con dicho modificador desde la misma clase, clases del mismo paquete y clases que hereden de ella (incluso en diferentes paquetes).
+
+*	**public**
+
+> El modificador de acceso public es el más permisivo de todos, básicamente public es lo contrario a private en todos los aspectos (lógicamente), esto quiere decir que si un componente de una clase es public, tendremos acceso a él desde cualquier clase o instancia sin importar el paquete o procedencia de ésta.
+ 
+
+
+![Modificadores de acceso en java](src/main/resources/modificadores_acceso.png "Modificadores de acceso en java") 
 
 ------------------------------------------------------------
+
+
 _
 
 **Herencia**  
