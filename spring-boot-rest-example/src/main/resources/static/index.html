@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<h1>Hello world!</h1>
+	
+	<br><br>
+	<table id="userTable" border="1">
+    <tbody>
+        <tr><td>Nombre</td><td>Edad</td></tr>
+    </tbody>
+	</table>
+	
+<script type="text/javascript">
+
+	listAllUsers();
+
+	function listAllUsers() {
+	  $.getJSON( "http://localhost:8080/user", 
+		function( data ) {
+		  var items = [];
+		  $.each( data, function( key, val ) {
+			  $("#userTable > tbody").append(
+						"<tr><td>" + val.name + "</td><td>" + val.age + "</td></tr>");
+		  });
+
+		});
+	}
+	
+	/* function createUser() {
+		var user = {
+				name: $('#name').val(), 
+		  		age: $('#age').val()	
+			};
+			
+		    $.ajax({
+		        url: '${home}user/',
+		        type: 'POST',
+		        data: JSON.stringify(user),
+		        processData: false,
+		        contentType: "application/json",
+		        success: function(data, status, xhr) {	
+					console.log("SUCCESS: ", data);
+					console.log("LOCATION: ", xhr.getResponseHeader('Location'));
+					getUser( xhr.getResponseHeader('Location') );
+				},
+				statusCode: {
+				    409: function() {
+				        alert("El nombre de usuario ya existe!");
+				    }
+				},
+				error: function(e) {	
+					console.log("ERROR: ", e);
+				},
+				done : function(e) {
+					console.log("DONE");
+	
+				}
+		    })
+	} */
+
+</script>
+</body>
+</html>
