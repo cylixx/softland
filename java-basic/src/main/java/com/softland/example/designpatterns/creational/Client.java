@@ -27,7 +27,6 @@ interface Animal {
 }
 
 class Cow implements Animal {
-
 	@Override
 	public void sound() {
 		System.out.println("Cow moos");
@@ -35,7 +34,6 @@ class Cow implements Animal {
 }
 
 class Deer implements Animal {
-
 	@Override
 	public void sound() {
 		System.out.println("Deer grunts");
@@ -43,7 +41,6 @@ class Deer implements Animal {
 }
 
 class Hyena implements Animal {
-
 	@Override
 	public void sound() {
 		System.out.println("Hyena.java");
@@ -51,7 +48,6 @@ class Hyena implements Animal {
 }
 
 class Lion implements Animal {
-
 	@Override
 	public void sound() {
 		System.out.println("Lion roars");
@@ -95,7 +91,6 @@ interface AnimalFactory {
 }
 
 class CowAnimalFactory implements AnimalFactory {
-
 	@Override
 	public Animal createAnimal() {
 		return new Cow();
@@ -103,7 +98,6 @@ class CowAnimalFactory implements AnimalFactory {
 }
 
 class DeerAnimalFactory implements AnimalFactory {
-
 	@Override
 	public Animal createAnimal() {
 		return new Deer();
@@ -111,7 +105,6 @@ class DeerAnimalFactory implements AnimalFactory {
 }
 
 class HyenaAnimalFactory implements AnimalFactory {
-
 	@Override
 	public Animal createAnimal() {
 		return new Hyena();
@@ -119,7 +112,6 @@ class HyenaAnimalFactory implements AnimalFactory {
 }
 
 class LionAnimalFactory implements AnimalFactory {
-
 	@Override
 	public Animal createAnimal() {
 		return new Lion();
