@@ -1,8 +1,23 @@
 /*
-	A colony of eight houses, represented as cells, are arranged in a straight line. Each day every cell competes with its adjacent cells (neighbours). An integer value of 1 represents an active cell and value of 0 represents an inactive cell. If both the neighbours are either active or inactive, the cell becomes inactive the next day; otherwise it becomes active on the next day. The two cells on the ends have a single adjacent cell, so the other adjacent cell can be assumed to be always inactive. Even after updating the cell state, its previous state is considered for updating the state of other cells. The cell information of all cells should be updated simultaneously.
+	A colony of eight houses, represented as cells, are arranged in a straight line. 
+	Each day every cell competes with its adjacent cells (neighbours). An integer value of 1 
+	represents an active cell and value of 0 represents an inactive cell. 
+	If both the neighbours are either active or inactive, the cell becomes inactive the next day;
+	otherwise it becomes active on the next day. The two cells on the ends have a single adjacent
+	cell, so the other adjacent cell can be assumed to be always inactive. 
+	Even after updating the cell state, its previous state is considered for updating the state 
+	of other cells. The cell information of all cells should be updated simultaneously.
 
 
-Una colonia de ocho casas, representadas como celdas, está dispuesta en línea recta. Cada día, cada célula compite con sus celdas adyacentes (vecinos). Un valor entero de 1 representa una celda activa y el valor de 0 representa una celda inactiva. Si ambos vecinos están activos o inactivos, la celda se vuelve inactiva al día siguiente; de lo contrario, se activa el día siguiente. Las dos celdas en los extremos tienen una sola celda adyacente, por lo que se puede asumir que la otra celda adyacente está siempre inactiva. Incluso después de actualizar el estado de la celda, se considera su estado anterior para actualizar el estado de otras celdas. La información de celda de todas las celdas debe actualizarse simultáneamente.
+Una colonia de ocho casas, representadas como celdas, está dispuesta en línea recta. 
+Cada día, cada célula compite con sus celdas adyacentes (vecinos). 
+Un valor entero de 1 representa una celda activa y el valor de 0 representa una celda inactiva. 
+Si ambos vecinos están activos o inactivos, la celda se vuelve inactiva al día siguiente; 
+de lo contrario, se activa el día siguiente. Las dos celdas en los extremos tienen una sola 
+celda adyacente, por lo que se puede asumir que la otra celda adyacente está siempre inactiva. 
+Incluso después de actualizar el estado de la celda, se considera su estado anterior para 
+actualizar el estado de otras celdas. La información de celda de todas las celdas debe 
+actualizarse simultáneamente.
 
 */
 

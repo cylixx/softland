@@ -28,8 +28,11 @@ public class ArrayLeftRotation {
 	static int[] rotLeft(int[] data, int d) {
 		
 		int[] result = new int[data.length];
+		int index = 0;
 		for (int i = 0; i < data.length; i++) {
-		    result[(i + (data.length - d)) % data.length] = data[i];
+			index = (i + (data.length - d)) % data.length;
+			System.out.println("("+i+" + ("+data.length+" - "+d+")) % "+data.length+" = "+ index);
+		    result[index] = data[i];
 		}
 		return result;
 	}
