@@ -37,7 +37,7 @@ class ScoreComparator implements Comparator<Person> {
 }
 
 
-public class P02_compareAndOrderList {
+public class P02_comparatorImplToOrderListObj {
 	
 	public static void main( String[] args ) {
 		Scanner scan = new Scanner(System.in); 
