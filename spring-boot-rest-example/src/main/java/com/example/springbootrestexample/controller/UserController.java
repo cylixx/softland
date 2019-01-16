@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.springbootrestexample.service.UserNotFoundException;
 import com.example.springbootrestexample.service.UserService;
 import com.example.springbootrestexample.vo.User;
 
@@ -29,8 +30,11 @@ public class UserController {
 	@RequestMapping(value="/user/{id}", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ResponseEntity<User> getUser(@PathVariable("id") String id) {
 		User user = userService.getUser(id);
+//		if (user==null) {
+//			return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+//		}
 		if (user==null) {
-			return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+			throw new UserNotFoundException("id-"+id); 
 		}
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
