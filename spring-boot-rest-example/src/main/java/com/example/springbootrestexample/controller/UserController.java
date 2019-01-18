@@ -6,9 +6,12 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,6 +30,9 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private MessageSource messageSource;
 	
 	@RequestMapping(value="/hello", method=RequestMethod.GET)
 	public String getHello() {
@@ -61,6 +67,11 @@ public class UserController {
 		
 	}
 	
+	//Internaxionalizacion de mensajes
+	@GetMapping(path="/hello-world-i18n")
+	public String helloWorldI18n() {
+		return messageSource.getMessage("good.morning.message", null, LocaleContextHolder.getLocale());
+	}
 	
 	
 }
