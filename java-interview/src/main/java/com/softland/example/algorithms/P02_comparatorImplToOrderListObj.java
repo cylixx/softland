@@ -52,6 +52,7 @@ public class P02_comparatorImplToOrderListObj {
 		}
 		scan.close();
 		
+		System.out.println("=============[RESULTADO]===================");
 		Arrays.sort(people, new ScoreComparator());
 		for(int i=0; i<people.length; i++) {
 			System.out.printf("%s %s\n", people[i].name, people[i].score);
