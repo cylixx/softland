@@ -12,7 +12,7 @@ package com.softland.example.mutableVSimmutable;
 // Las clases inmutables son intrínsecamente Thread-safe y por este motivo 
 // no hace falta sincronizar el acceso a ellos cuando se utilizan dentro 
 // de un ambiente multi-hilo.
-public class ImmutableClass {
+public final class ImmutableClass {
 	
 	// final - cumple dos roles
 	// 1. Forzar que se inicialize el campo una sola vez en la clase
