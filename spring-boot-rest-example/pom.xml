@@ -19,7 +19,14 @@
 	</properties>
 
 	<dependencies>
-		<!-- Para abilitar actuator en el brouser
+	   <!-- Reconstruye en automatico cada vez que guardamos cambios -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+	
+		<!-- Para abilitar actuator en el browser
 		     http://localhost:8080/actuator
 		     http://localhost:8080/browser/index.html#/
 		     http://localhost:8080/browser/index.html#/actuator
@@ -33,10 +40,33 @@
 			<artifactId>spring-data-rest-hal-browser</artifactId>
 		</dependency>
 		
+		<!-- Necesaria para habilitar JPA + h2 database-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<!-- Open consol H2: http://localhost:8080/h2-console -->
+		<!-- Connection parameters default: -->
+		<!-- Saved Settings: Generic H2 (Embedded) -->
+		<!-- JDBC URL: jdbc:h2:mem:testdb -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<!-- Para abilitar seguridad BASIC AUTH default --> 
+<!-- Defaul password:  -->
+<!-- username = user   -->
+<!-- password = the password when started spring boot (Using generated security password: e04743a0-c6cd-445b-a1bd-f46763a89489)   -->
+		<!-- <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency> -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
