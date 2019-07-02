@@ -7,8 +7,11 @@
 package com.softland.example.algorithms;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class P05_foundFirstRepeatedNumberInArray {
 
@@ -20,6 +23,7 @@ public class P05_foundFirstRepeatedNumberInArray {
 		System.out.println("1. Ordenando los valores del areglo y comparando el primero con el segundo");
 		int first = getFirstDuplicate(numbers);
 		System.out.println("First repeated number = " + first);
+		
 
 		System.out.println("This is almost the easiest way! hashSet returns false whenever a duplicate number is added to it.");
 		first = getFirstDuplicate2(numbers);
@@ -31,9 +35,14 @@ public class P05_foundFirstRepeatedNumberInArray {
 		for(int i=0; i<repeats.length; i++) {
 			System.out.printf(repeats[i] + " ");
 		}
+		
+		//Java 8
+		System.out.println("\nJava 8 - Numeros repetidos: ");
+		List<Integer> listInteger = Arrays.stream(numbers).boxed().collect(Collectors.toList()); //Convierte Array to List
+		listInteger.stream().filter(i -> Collections.frequency(listInteger, i) >1).collect(Collectors.toSet()).forEach(System.out::println);
 	}
 	
-	//1. Ordenando los valores del areglo y comparando el primero con el segundo
+	//1. Ordenando los valores del areglo y comparando el segundo con el primero
 	public static int getFirstDuplicate(int[] array) {
 		Arrays.sort(array);
 		
@@ -57,10 +66,11 @@ public class P05_foundFirstRepeatedNumberInArray {
 		return 0;
 	}
 	
-	// Obyiene todos los repetidos 
+	// Obtiene todos los repetidos 
 	public static Integer[] getDuplicates(int[] array) {
 		Set<Integer> temp = new HashSet<Integer>();
 		Arrays.sort(array);
+		System.out.println("Ordenamos array: " + Arrays.toString(array));
 		
 		for(int i=1; i < array.length; i++) {
 			if (array[i] == array[i-1]) {

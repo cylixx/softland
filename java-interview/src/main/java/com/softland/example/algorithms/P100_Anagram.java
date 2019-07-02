@@ -89,8 +89,11 @@ public class P100_Anagram {
 			int index = 0;
 			for (char c : temp2.toCharArray()) {
 				index = list1.indexOf(c);
+//				System.out.println("index = " + index);
+				System.out.printf("\nChar = %s, index = %s", c, index);
 				if (index >= 0) {
 					list1.remove(index);
+					//System.out.println("\nlist1.remove("+index+"): " + list1.toString());
 				} else {
 					result++;
 				}
@@ -103,17 +106,24 @@ public class P100_Anagram {
 	}
 	
 	public static void main(String[] args) throws IOException {
-		Scanner scanner = new Scanner(System.in);
+//		Scanner scanner = new Scanner(System.in);
+//		
+//		int q = scanner.nextInt();
+//		scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+//		
+//		for (int i=0; i<q; i++) {
+//			String s = scanner.nextLine();
+//			int result = anagram(s);
+//			System.out.println(" ");
+//			System.out.println("Min number of changes: " + result);
+//		}
+//		scanner.close();
 		
-		int q = scanner.nextInt();
-		scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-		
-		for (int i=0; i<q; i++) {
-			String s = scanner.nextLine();
-			int result = anagram(s);
-			System.out.println(" ");
-			System.out.println("Min number of changes: " + result);
-		}
-		scanner.close();
+		Scanner in =  new Scanner(System.in);
+		System.out.println("Dame cadena: ");
+		String s = in.next();
+		int result = anagram(s);
+		System.out.println("\nMin number of changes: " + result);
+		in.close();
 	}
 }

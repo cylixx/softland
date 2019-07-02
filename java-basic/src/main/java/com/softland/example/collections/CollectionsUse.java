@@ -17,8 +17,8 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 /**
- * Hello world!
- *
+ * Collections examples:
+ * 
  */
 public class CollectionsUse {
 	
@@ -95,6 +95,11 @@ public class CollectionsUse {
 	      System.out.println( map3.toString() );
 //	      displayAll(map3.keySet());
 //	      displayAll(map3.values());
+	      
+	      System.out.println("\n----------------------------");
+	      System.out.println(">Collection Set time spent: ");
+	      CollectionSetTime();
+	      
 	   }
 	
 	   static void displayAll(Collection col) {
@@ -105,4 +110,33 @@ public class CollectionsUse {
 	      }
 	      System.out.println();
 	   }
+	   
+	   
+	   static void CollectionSetTime() {
+		   final Set<Integer> hashSet = new HashSet<Integer>(1000000);
+			final Long startHashSetTime = System.currentTimeMillis();
+			for (int i = 0; i < 1000000; i++) {
+			    hashSet.add(i);
+			}
+			final Long endHashSetTime = System.currentTimeMillis();
+			System.out.println("Time spent by HashSet: " + (endHashSetTime - startHashSetTime));
+
+			final Set<Integer> treeSet = new TreeSet<Integer>();
+			final Long startTreeSetTime = System.currentTimeMillis();
+			for (int i = 0; i < 1000000; i++) {
+			    treeSet.add(i);
+			}
+			final Long endTreeSetTime = System.currentTimeMillis();
+			System.out.println("Time spent by TreeSet: " + (endTreeSetTime - startTreeSetTime));
+
+			final Set<Integer> linkedHashSet = new LinkedHashSet<Integer>(1000000);
+			final Long startLinkedHashSetTime = System.currentTimeMillis();
+			for (int i = 0; i < 1000000; i++) {
+			    linkedHashSet.add(i);
+			}
+			final Long endLinkedHashSetTime = System.currentTimeMillis();
+			System.out.println("Time spent by LinkedHashSet: " + (endLinkedHashSetTime - startLinkedHashSetTime));
+			
+	   }
+	   
 }

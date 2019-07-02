@@ -34,7 +34,9 @@ public class P07_ShortestSubstring {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// Input String 
-        String str = "AABBBCBB"; 
+//        String str = "AABBBCBB"; 
+		String str = "dabbcabcd";
+        
   
         int len = shortestSubstring(str); 
         System.out.println(" The length of the smallest substring consisting of maximum distinct "

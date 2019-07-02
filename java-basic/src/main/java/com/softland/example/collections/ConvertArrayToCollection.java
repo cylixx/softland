@@ -7,11 +7,10 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 
-public class ArrayToCollection {
+public class ConvertArrayToCollection {
 	
 //	private static void example1(String[] args) throws IOException {
 //		BufferedReader in = new BufferedReader (new InputStreamReader(System.in));
@@ -34,9 +33,34 @@ public class ArrayToCollection {
 
 	public static void main(String[] args) throws IOException {
 
-		int[] arr = { 64, 34, 25, 12, 22, 11, 90 };   //inicializa array
+		System.out.println("=========== Array to List (String)=================");
 		
-		//=========== Array to List =================
+		//String sArray[] = new String[] { "A", "B", "C", "D" };
+		String[] sArray = new String[] { "A", "B", "C", "D" };
+
+		// convert array to list #1
+		List<String> listStr0 = Arrays.asList(sArray);
+		System.out.println("convert array to list #1: " + listStr0);
+
+		// convert array to list #2
+		List<String> listStr2 = new ArrayList<String>(Arrays.asList(sArray));
+		System.out.println("convert array to list #2" + listStr2);
+
+		int iArray[] = new int[] { 1, 2, 3 };
+		// Java 8, convert array to List, primitive int[] to List<Integer>
+		List<Integer> listInt = Arrays.stream(iArray).boxed().collect(Collectors.toList());
+		System.out.println("Java 8, convert array to List, primitive int[] to List<Integer>: " + listInt);
+		
+		
+		
+		
+		
+		int[] arr = { 64, 34, 25, 12, 22, 11, 90 };   //inicializa array
+//		int arr[] = { 64, 34, 25, 12, 22, 11, 90 };
+		
+		//=========== Array to List (int)=================
+		System.out.println("=========== Array to List (Int)=================");
+		
 		// 1. Naive form
 		List<Integer> list1 = new ArrayList<>(arr.length);
 		for (int i : arr) {
@@ -53,6 +77,18 @@ public class ArrayToCollection {
 
 		
 		//=========== List to Array =================
+		System.out.println("=========== List to Array =================");
+		List<String> listStr = new ArrayList<String>();
+		listStr.add("This "); 
+		listStr.add("is "); 
+		listStr.add("a ");
+		listStr.add("good ");
+		listStr.add("program.");
+	    String[] s1 = listStr.toArray(new String[0]);  // Convert list<String> to array  String[]
+	    System.out.println("List<String> to String[] :" + Arrays.toString(s1) );
+	    printArray(s1);
+	    System.out.println("");
+	      
 		// 1. Java 8  List to array
 		int[] newArr = list2.stream().mapToInt(i->i).toArray(); 
 		System.out.println("List<Integer> to int[] :" + Arrays.toString(newArr) );
@@ -62,6 +98,7 @@ public class ArrayToCollection {
 
 		
 		//=========== Array to Set =================
+		System.out.println("=========== Array to Set =================");
 		// input array containing all distinct elements
 		String str[] = { "A", "B", "C", "D" };
 		
@@ -84,6 +121,7 @@ public class ArrayToCollection {
 		
 		
 		//=========== Set to Array =================
+		System.out.println("=========== Set to Array =================");
 		// Creating a hash set of strings
         Set<String> s = new HashSet<String>();
         s.add("Geeks");
@@ -103,6 +141,7 @@ public class ArrayToCollection {
      
         
         //=========== List To Set =================
+        System.out.println("=========== List To Set =================");
         List<String> list = new ArrayList<String>();
         list.add("1");
         list.add("2");
@@ -115,6 +154,7 @@ public class ArrayToCollection {
         
         
       //=========== Set To List =================
+        System.out.println("=========== Set To List =================");
         Set<String> set2 = new HashSet<String>();
         set2.add("1");
         set2.add("2");
@@ -124,44 +164,9 @@ public class ArrayToCollection {
         
         List<String> list3 = new ArrayList<String>(set2);
         System.out.println("List values : " + list3);
-        
-        
-        //=========== Eliminar valores duplicados de un Array =================
-        String[] nriAccounts = {"NRE", "NRO", "FCNR", "RFC", "NRE"};
 
-	     // let's convert this array to HashSet in Java
-	     // if array contains any duplicate than that would be lost
-	     HashSet<String> setOfAccounts = new HashSet<>(Arrays.asList(nriAccounts));
-	     System.out.println("Array contains: " + Arrays.toString(nriAccounts));
-	     System.out.println("HashSet contains: " + setOfAccounts);
-
-	     
-	     int[] arr10 = { 64, 34, 25, 12, 22, 11, 90, 12, 25 };   //inicializa array
-	     System.out.println("Array contains: " + Arrays.toString(arr10));
-	     Set<Integer> list11 = Arrays.stream(arr10).boxed().collect(Collectors.toSet());    //elimina duplicados de Array int[]
-	     int[] newArr10 = new int[ list11.size() ];
-	     int i = 0;
-	     for (Integer value : list11) {
-	    	 newArr10[i++] = value;
-	     }
-	     System.out.println("1. simple, Elimina duplicados de array int[]: " + Arrays.toString(newArr10) );
-	     
-	     
-	     List<Integer> list12 = Arrays.stream(arr10).boxed().collect(Collectors.toList());
-	     Set<Integer> set12 = new TreeSet<Integer>(list12);
-	     int[] newList12 = set12.stream().mapToInt(j->j).toArray(); 
-		 System.out.println("1. Java 8, Elimina duplicados de array int[]: " + Arrays.toString(newList12) );
-	     
-		 
-		 //====== busca numero dentro de array
-		 System.out.println("findNumber([64, 34, 25, 12, 22, 11, 90], 12) : " + findNumber(arr, 12));
-		 
-		 
-		//====== Regresa un array con los números impares contenidos dentro de un intervalo de numeros
-		 int[] primos = oddNumbers(2, 11);
-		 System.out.println("Array numeros primos, oddNumbers(2, 11) : " + Arrays.toString(primos));
-		 
 	}
+	
 	
 	// Generic function to convert an array to an HashSet
 	public static <T> Set<T> convertToSet(T arr[]) {
@@ -196,42 +201,13 @@ public class ArrayToCollection {
         return arr;
 	}
 	
-	/*
-     * Regresa YES si el numero buscado se encuentra en el Array 
-     */
-    static String findNumber(int[] arr, int k) {
-        /*
-         * Write your code here.
-         */
-       List<Integer> list = Arrays.stream(arr).boxed().collect(Collectors.toList());
-
-       if(list.contains(k)) {
-            return "YES";
-        }
-        return "NO";
+    
+    //imprime el contenido de un array de objects
+    static void printArray(Object[] s1) {
+    	for(int i = 0; i< s1.length; ++i) {
+	         Object contents = s1[i];
+	         System.out.print(contents);
+	    } 
     }
     
-    /*
-     * Regresa un array con los números impares contenidos dentro de un intervalo de numeros
-     */
-    static int[] oddNumbers(int l, int r) {
-        /*
-         * Write your code here.
-         */
-        List<Integer> rs = new ArrayList<Integer>();
-        
-        for (int i=l; i<=r; i++) {
-            if ( (i%2) == 0 ) {
-                //even (par)
-            } else {
-                //odd (impar)
-                rs.add(i);
-            }
-        }
-        
-        int[] newArr = rs.stream().mapToInt(i->i).toArray();
-        return newArr;
-    }
-    
-
 }
