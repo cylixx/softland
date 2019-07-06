@@ -2,7 +2,7 @@ package com.softland.example.algorithms;
 
 import java.util.Arrays;
 
-public class P102_GreatestCommonDivisor {
+public class PA102_GreatestCommonDivisor {
 
 	public static void main(String[] args) {
 

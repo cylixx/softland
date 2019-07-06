@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
-public class P103_FindNearestSteakHouse {
+public class PA103_FindNearestSteakHouse {
 
 	public static void main(String[] args) {
 		

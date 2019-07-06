@@ -61,6 +61,7 @@ public class ArraysAndCollectionUtils {
 	    int[] arr = { 64, 34, 25, 12, 22, 11, 90 };   
 	    List<Integer> list2 = Arrays.stream(arr).boxed().collect(Collectors.toList());  //int[] to List<Integer>
 		// 1. Java 8  List to array
+	    //list2.set(0, 100);   <--- Replaces the element at the specified position in this list with the specified element 
 		int[] newArr = list2.stream().mapToInt(i->i).toArray();  //List<Integer> to int[]
 		System.out.println("List<Integer> to int[] : " + Arrays.toString(newArr) );
 		

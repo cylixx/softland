@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class P105_AircraftDistance {
+public class PA105_AircraftDistance {
 
 	public static void main(String[] args) {
 

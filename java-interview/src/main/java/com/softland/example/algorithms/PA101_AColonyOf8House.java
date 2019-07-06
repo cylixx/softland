@@ -40,7 +40,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class P101_AColonyOf8House {
+public class PA101_AColonyOf8House {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

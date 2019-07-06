@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class P104_PrioritazedOrders {
+public class PA104_PrioritazedOrders {
 
 	public static void main(String[] args) {
 
@@ -131,7 +131,7 @@ public class P104_PrioritazedOrders {
 	
 	//-----------------------------
 	/*
-	
+	 Best answer
 	 * Prime order - alphanumericID + aditional metadata (space delimited of lowercase)
 	 * Non-prime order - alphanumericID + aditional metadata (space delimited of positive integrers)
   	
