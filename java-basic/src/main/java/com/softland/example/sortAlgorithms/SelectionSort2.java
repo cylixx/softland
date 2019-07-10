@@ -46,6 +46,8 @@ In Place : Yest, it does not require extra space.
 */
 package com.softland.example.sortAlgorithms;
 
+import java.util.Arrays;
+
 public class SelectionSort2 {
 
 	void sort(int arr[])
@@ -83,6 +85,7 @@ public class SelectionSort2 {
     {
         SelectionSort2 ob = new SelectionSort2();
         int arr[] = {64,25,12,22,11};
+        System.out.println("Input array: " + Arrays.toString(arr));
         ob.sort(arr);
         System.out.println("Sorted array");
         ob.printArray(arr);
