@@ -3,7 +3,7 @@
  * https://www.cs.cmu.edu/~adamchik/15-121/lectures/Sorting%20Algorithms/sorting.html
  * 
  */
-package com.softland.example.sort;
+package com.softland.example.algorithmsAndDataStructures;
 
 import java.util.Arrays;
 

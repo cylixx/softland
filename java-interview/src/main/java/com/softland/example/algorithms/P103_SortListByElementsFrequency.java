@@ -11,7 +11,7 @@ package com.softland.example.algorithms;
 
 import java.util.Arrays;
 
-public class P103_SortListByElementsRequency {
+public class P103_SortListByElementsFrequency {
 
 	public static void main(String[] args) {
 		
