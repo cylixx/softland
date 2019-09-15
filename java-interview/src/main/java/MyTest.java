@@ -11,6 +11,7 @@ public class MyTest {
 		System.out.println("mod 1 % 2=" + 1 % 2);
 		System.out.println("mod 5 % 2=" + 5 % 2);
 		System.out.println("mod 4 % 2=" + 4 % 2);
+		System.out.println("mod 5 % 5=" + 5 % 5);
 		
 		System.out.println("mod 1189730224 % 100=" + 1189730224 % 100);
 		
@@ -21,6 +22,7 @@ public class MyTest {
 		System.out.println("2 / 2  = " + 2/2);
 		System.out.println("1 / 2  = " + 1/2);
 		System.out.println("0 / 2  = " + 0/2);
+		System.out.println("5 / 5  = " + 5/5);
 		//System.out.println("1 / 0  = " + 1/0);  //Error / by zero
 		
 	}

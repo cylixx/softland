@@ -60,7 +60,7 @@ public class Q1_1_IsUnique {
        return false.
 	 * 
 	 * The time complexity for this code is O( n ), where n is the length of the string. 
-	 * The space complexity isO(l ).
+	 * The space complexity is O(l ).
 	 */
 	static boolean isUniqueChars(String str) {
 		if (str.length() > 128) return false;
