@@ -4,7 +4,7 @@
 	other.
 	Hints: #7, #84, #722, #737
  */
-package com.softland.example.ctci;
+package com.softland.example.crackingCodeInterview;
 
 public class Q1_2_CheckPermutation {
 

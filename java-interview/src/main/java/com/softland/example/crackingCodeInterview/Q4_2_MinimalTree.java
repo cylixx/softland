@@ -4,7 +4,7 @@
 	rithm to create a binary search tree with minimal height.
 	Hints: #79, #73, #7 76
  */
-package com.softland.example.ctci;
+package com.softland.example.crackingCodeInterview;
 
 public class Q4_2_MinimalTree {
 

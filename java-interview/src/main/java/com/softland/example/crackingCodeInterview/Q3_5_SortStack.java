@@ -1,4 +1,4 @@
-package com.softland.example.ctci;
+package com.softland.example.crackingCodeInterview;
 
 import java.util.Stack;
 

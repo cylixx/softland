@@ -4,7 +4,7 @@ Is Unique: Implement an algorithm to determine if a string has all unique charac
 cannot use additional data structures?
 Hints: #44, #7 7 7, #732
  */
-package com.softland.example.ctci;
+package com.softland.example.crackingCodeInterview;
 
 import java.util.HashSet;
 import java.util.Set;

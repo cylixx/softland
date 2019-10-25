@@ -9,7 +9,7 @@ Input: Tact Coa
 Output: True (permutations: "taco cat'; "atc o eta·; etc.)
  * 
  */
-package com.softland.example.ctci;
+package com.softland.example.crackingCodeInterview;
 
 import java.util.Arrays;
 

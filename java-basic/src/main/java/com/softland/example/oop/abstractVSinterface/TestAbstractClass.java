@@ -23,6 +23,9 @@
 package com.softland.example.oop.abstractVSinterface;
 
 abstract class Animal {
+	public String name;
+	private int id;
+	
 	abstract String eat(); //Having an abstract method in your class will force you to declare your class as abstract itself
 	public void normalMethod() { //we can have another method definitions with another acces modify
         //method body

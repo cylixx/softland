@@ -1,4 +1,4 @@
-package com.softland.example.ctci;
+package com.softland.example.crackingCodeInterview;
 
 public class Q1_5_OneAway {
 

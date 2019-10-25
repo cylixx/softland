@@ -16,11 +16,11 @@
  * 5) The abstract keyword is used to declare abstract class.	
  *    The interface keyword is used to declare interface.
  * 
- * 6) An abstract classcan extend another Java class and implement multiple Java interfaces.	
+ * 6) An abstract class can extend another Java class and implement multiple Java interfaces.	
  *    An interface can extend another Java interface only.
  * 
- * 7) An abstract classcan be extended using keyword "extends".	
- *    An interface classcan be implemented using keyword "implements".
+ * 7) An abstract class can be extended using keyword "extends".	
+ *    An interface class can be implemented using keyword "implements".
  * 
  * 8) A abstract class can have class members like private, protected, etc.	
  *    Members of a Java interface are public by default. 

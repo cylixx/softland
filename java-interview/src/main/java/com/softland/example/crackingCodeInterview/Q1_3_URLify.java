@@ -23,7 +23,7 @@ have in the final string. In the second pass, which is done in reverse order, we
 we see a space, we replace it with %20. If there is no space, then we copy the original character.
 
  */
-package com.softland.example.ctci;
+package com.softland.example.crackingCodeInterview;
 
 public class Q1_3_URLify {
 
