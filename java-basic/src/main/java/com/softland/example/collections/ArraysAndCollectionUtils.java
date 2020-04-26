@@ -8,15 +8,48 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 //import org.apache.commons.lang3.ArrayUtils;
 
 /**
  * @author cylixx
  *
+ *
+//---------  Arithmetic Operators  --------------------
+/ 	Division 	Divides one value by another 	x / y 	 Example:  12 / 3 = 4
+% 	Modulus 	Returns the division remainder 	x % y    Example:  5 % 2 = 1
+
+
+//---------------------- convertion between Array, List and Set ------------------------------
+
+String[] stringArray = {"NRE", "NRO", "FCNR", "RFC", "NRE"};
+List<String> list = Arrays.asList(stringArray);  //convert Array to List
+HashSet<String> setOfAccounts = new HashSet<>(Arrays.asList(stringArray));  // String[] to HashSet<String>  (remove duplicates)
+long upper = Arrays.stream(stringArray).filter( wo -> wo.equals(wo.toUpperCase()) ).count(); // para recorrer un String[]  Array
+
+String cad = "La CASA del lago";
+long upper = cad.chars().filter(c -> Character.isUpperCase(c)).count();  // para recorrer los caracteres de un String
+
+
+int[] a = { 1, 5, 12, 3, -15, 52 };
+Arrays.toString(a);   //return a String representation of the Array
+Arrays.stream(a);  //Returns a sequential DoubleStream with the specified array as its source. --- Para recorrer un array
+Arrays.sort(a);  // sorts the array in ascending order
+
+Set<Integer> setA = Arrays.stream( a ).boxed().collect(Collectors.toSet());  // int[] Array  to  Set<Integer>
+int[] intArray = setA.stream().mapToInt(i->i).toArray();   // Set<Integer>  to  int[] Array
+int[] intArray2 = setA.toArray(new Integer[setA.size()]);  // Set<Integer>  to  int[] Array
+List<Integer> listInteger = Arrays.stream( a ).boxed().collect(Collectors.toList());  // int[] Array  to  List<Integer>
+Set<Integer> setInteger = new TreeSet<Integer>(listInteger);   //  List<Integer>  to  Set<Integer>
+int[] newArr = listInteger.stream().mapToInt(i->i).toArray();  //  List<Integer>  to  int[] Array
+
+ *
+ *
  */
 public class ArraysAndCollectionUtils {
 
 	public static void main(String[] args) {
+		operators();  // Java program to illustrate arithmetic operators 
 		ArrayToList();  //Conver Array to List
 		ListToArray();  //Convert List to Array
 		sortArray();  // Sort array, min and max element
@@ -30,34 +63,88 @@ public class ArraysAndCollectionUtils {
 		duplicateValuesInArray(); // Busca valores repetidos en Array
 	}
 
+	// Java program to illustrate arithmetic operators 
+	static void operators() {
+        int a = 20, b = 10, c = 0, d = 20, e = 40, f = 30; 
+        String x = "Thank", y = "You"; 
+  
+        // + and - operator 
+        System.out.println("a + b = " + (a + b)); 
+        System.out.println("a - b = " + (a - b)); 
+  
+        // + operator if used with strings 
+        // concatenates the given strings. 
+        System.out.println("x + y = " + x + y); 
+  
+        // * and / operator 
+        System.out.println("a * b = " + (a * b)); 
+        System.out.println("a / b = " + (a / b)); 
+  
+        // modulo operator gives remainder 
+        // on dividing first operand with second 
+        System.out.println("20 % 10 = " + (a % b)); 
+        System.out.println("10 % 1 = " + (10 % 1)); 
+        System.out.println("10 % 3 = " + (10 % 3)); 
+        System.out.println("10 % 4 = " + (10 % 4)); 
+        System.out.println("1 % 10 = " + (1 % 10)); 
+        System.out.println("2 % 10 = " + (2 % 10)); 
+        System.out.println("9 % 10 = " + (9 % 10));
+        System.out.println("-2 % 5 = " + (-2 % 5));
+        System.out.println("0 % 5 = " + (0 % 5));
+  
+        // if denominator is 0 in division 
+        // then Arithmetic exception is thrown. 
+        // uncommenting below line would throw 
+        // an exception 
+        // System.out.println(a/c); 
+    } 
+	
 	static void ArrayToList() {
-		System.out.println("\n=========== Array to List (String)=================");
+		System.out.println("\n-------------- Array String[] to List<String> (String) -------------");
 		//String sArray[] = new String[] { "A", "B", "C", "D" };  otra forma de definir array
 		String[] sArray = new String[] { "A", "B", "C", "D" };
 
-		// convert array to list #1
-		List<String> listStr0 = Arrays.asList(sArray);
+		// convert String array to list #1
+		//List<String> listStr0 = Arrays.asList(sArray);
+		List<String> listStr0 = Arrays.asList("A", "B", "C", "D");  //common way to initialize an array
 		System.out.println("convert array to list #1: " + listStr0);
 
-		// convert array to list #2
+		// convert String array to list #2
 		List<String> listStr2 = new ArrayList<String>(Arrays.asList(sArray));
 		System.out.println("convert array to list #2" + listStr2);
 
-		System.out.println("\n----------------------------");
-		int iArray[] = new int[] { 1, 2, 3, 12, 7 };
+		
+		System.out.println("\n---------------[Conver int[] array to List<Integer>]-------------");
+		int[] iArray = new int[] { 1, 2, 3, 12, 7 };
+		
 		// Java 8, convert array to List, primitive int[] to List<Integer>
-		List<Integer> listInt = Arrays.stream(iArray).boxed().collect(Collectors.toList());
-		System.out.println("Java 8, convert array to List, primitive int[] to List<Integer>: " + listInt);
+		List<Integer> listInt1 = Arrays.stream(iArray).boxed().collect(Collectors.toList());
+		System.out.println("Java 8 - Collectors, convert array int[] to List<Integer>: " + listInt1);
+		
+		
+		List<Integer> listInt2 = new ArrayList<Integer>();
+		Collections.addAll(listInt2, Arrays.stream(iArray).boxed().toArray(Integer[]::new));
+		System.out.println("Java 8 - Stream, convert array int[] to List<Integer>: " + listInt2);
+		
+		// easy way
+		//int[] ints = {1, 2, 3};
+		List<Integer> intList = new ArrayList<Integer>(iArray.length);
+		for (int i : iArray)	{
+		    intList.add(i);
+		}
+		System.out.println("Java basic form, convert array int[] to List<Integer>: " + intList);
+		
 	}
 	
 	// Convert List to Array
 	static void ListToArray() {
-		System.out.println("\n=========== List to Array =================");
+		System.out.println("\n=========== List<String> to Array String[] =================");
 		List<String> listStr = Arrays.asList("This ", "is ", "a ", "good ", "program.");  //Inicializa lista con valores
 	    String[] s1 = listStr.toArray(new String[0]);  // Convert list<String> to array  String[]
 	    System.out.println("List<String> to String[] : " + Arrays.toString(s1) );
 	      
 	    
+	    System.out.println("\n---------------[Conver List<Integer> to int[] array ]-------------");
 	    int[] arr = { 64, 34, 25, 12, 22, 11, 90 };   
 	    List<Integer> list2 = Arrays.stream(arr).boxed().collect(Collectors.toList());  //int[] to List<Integer>
 		// 1. Java 8  List to array
@@ -77,7 +164,7 @@ public class ArraysAndCollectionUtils {
 	
 	// Sort Array, min and max element in array
 	static void sortArray() {
-		System.out.println("\n============== Sort Array (Sorts the specified array of objects into ascending order, according to the natural ordering of its elements.) ================");
+		System.out.println("\n==== Sort Array (Sorts the specified array of objects into ascending order, according to the natural ordering of its elements.) ================");
 		String[] coins = { "dollar", "dime", "Quarter", "Rupia", "nickel"};
 		System.out.println("Array contains: " + Arrays.toString(coins));
 		Arrays.sort(coins);   // ordena array
@@ -158,7 +245,7 @@ public class ArraysAndCollectionUtils {
 		// Nos aseguramso que no se desborde el array por la distancia a rotar
 		// Por eso tenemos que ajustar la rotacion a la derecha que este drentro del
 		// tamaño del array
-		d = d % size;
+		d = d % size;    //% Modulus Returns the division remainder, 	example: 2 % 5 = 2
 		if (d < 0) 
 			d += size;
 		if (d == 0)
@@ -166,7 +253,7 @@ public class ArraysAndCollectionUtils {
 		
 		for (int i=0, index=0; i < size; i++) {
 			index = i + d;
-			// si la rotacion ala derecha es mayor al tamaño entonces ajustamos restando el tamaño
+			// si la rotacion a la derecha es mayor al tamaño entonces ajustamos restando el tamaño
 			if (index >= size) {
 				index -= size;  
 			}
@@ -219,7 +306,7 @@ public class ArraysAndCollectionUtils {
 	     int[] arr10 = { 64, 34, 25, 12, 22, 11, 90, 12, 25 };   //inicializa array
 	     System.out.println("Array contains: " + Arrays.toString(arr10));
 	     Set<Integer> list11 = Arrays.stream(arr10).boxed().collect(Collectors.toSet());    //elimina duplicados de Array int[]
-	     int[] newArr10 = list11.stream().mapToInt(i->i).toArray();
+	     int[] newArr10 = list11.stream().mapToInt(i->i).toArray();   //set to array
 //	     int[] newArr10 = new int[ list11.size() ];
 //	     int i = 0;
 //	     for (Integer value : list11) {
@@ -255,6 +342,7 @@ public class ArraysAndCollectionUtils {
 		int[] primos = oddNumbers(ini, fin);
 		 System.out.println("Array numeros primos, oddNumbers("+ini+", "+fin+") : " + Arrays.toString(primos));
 	}
+	
 	// (Numeros primos) Obtiene números impares dado un intervalo de números
     static int[] oddNumbers(int l, int r) {
         List<Integer> rs = new ArrayList<Integer>();
@@ -272,7 +360,7 @@ public class ArraysAndCollectionUtils {
         return newArr;
     }
 	
-  //Ceunta mayusculas y minusculas
+  //Cuenta mayusculas y minusculas
     static void countUppercaseAndLowercase() {
     	System.out.println("\n=========== Cuenta mayusculas y minusculas =================");
     	String cad = "La CASA del lago";

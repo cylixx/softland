@@ -2,7 +2,7 @@ O(n)  --> Linear time   (se recorren uno a uno los elementos)
 O(1)  --> Constant time
 
 O(Log n)   --> Binary search
-   2  
+     2  
 O(n )      --> Selection sort
 O(n log n) --> Quicksort
 

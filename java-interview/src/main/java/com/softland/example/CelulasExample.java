@@ -62,7 +62,7 @@ public class CelulasExample {
 	            }
 	        }
 	    }
-	    List<Integer> result = new ArrayList<>(temp.length);
+	    List<Integer> result = new ArrayList<Integer>(temp.length);
 	    return result;
 	    }
 	    

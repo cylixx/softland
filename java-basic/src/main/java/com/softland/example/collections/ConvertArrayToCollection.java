@@ -10,6 +10,41 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 
+/**
+ * @author cylixx
+ *
+ *
+//---------  Arithmetic Operators  --------------------
+/ 	Division 	Divides one value by another 	x / y 	 Example:  12 / 3 = 4
+% 	Modulus 	Returns the division remainder 	x % y    Example:  5 % 2 = 1
+
+
+//---------------------- convertion between Array, List and Set ------------------------------
+
+String[] stringArray = {"NRE", "NRO", "FCNR", "RFC", "NRE"};
+List<String> list = Arrays.asList(stringArray);  //convert Array to List
+HashSet<String> setOfAccounts = new HashSet<>(Arrays.asList(stringArray));  // String[] to HashSet<String>  (remove duplicates)
+long upper = Arrays.stream(stringArray).filter( wo -> wo.equals(wo.toUpperCase()) ).count(); // para recorrer un String[]  Array
+
+String cad = "La CASA del lago";
+long upper = cad.chars().filter(c -> Character.isUpperCase(c)).count();  // para recorrer los caracteres de un String
+
+
+int[] a = { 1, 5, 12, 3, -15, 52 };
+Arrays.toString(a);   //return a String representation of the Array
+Arrays.stream(a);  //Returns a sequential DoubleStream with the specified array as its source. --- Para recorrer un array
+Arrays.sort(a);  // sorts the array in ascending order
+
+Set<Integer> setA = Arrays.stream( a ).boxed().collect(Collectors.toSet());  // int[] Array  to  Set<Integer>
+int[] intArray = setA.stream().mapToInt(i->i).toArray();   // Set<Integer>  to  int[] Array
+int[] intArray2 = setA.toArray(new Integer[setA.size()]);  // Set<Integer>  to  int[] Array
+List<Integer> listInteger = Arrays.stream( a ).boxed().collect(Collectors.toList());  // int[] Array  to  List<Integer>
+Set<Integer> setInteger = new TreeSet<Integer>(listInteger);   //  List<Integer>  to  Set<Integer>
+int[] newArr = listInteger.stream().mapToInt(i->i).toArray();  //  List<Integer>  to  int[] Array
+
+
+ *
+ */
 public class ConvertArrayToCollection {
 	
 //	private static void example1(String[] args) throws IOException {
@@ -78,12 +113,8 @@ public class ConvertArrayToCollection {
 		
 		//=========== List to Array =================
 		System.out.println("=========== List to Array =================");
-		List<String> listStr = new ArrayList<String>();
-		listStr.add("This "); 
-		listStr.add("is "); 
-		listStr.add("a ");
-		listStr.add("good ");
-		listStr.add("program.");
+		List<String> listStr = Arrays.asList(new String[] {"This", "is", "a", "goog", "program."});
+		
 	    String[] s1 = listStr.toArray(new String[0]);  // Convert list<String> to array  String[]
 	    System.out.println("List<String> to String[] :" + Arrays.toString(s1) );
 	    printArray(s1);

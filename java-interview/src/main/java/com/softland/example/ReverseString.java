@@ -83,7 +83,7 @@ public class ReverseString {
 	public static void UsingArrayListObject() {
 		String input = "Geeks For Geeks"; 
         char[] hello = input.toCharArray(); 
-        List<Character> trial1 = new ArrayList<>(); 
+        List<Character> trial1 = new ArrayList<Character>(); 
   
         for (char c: hello) 
             trial1.add(c); 

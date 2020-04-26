@@ -13,7 +13,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
 
-import com.actinver.eactinver.anonymous.web.ws.annotation.ValidateOperation;
+//import com.actinver.eactinver.anonymous.web.ws.annotation.ValidateOperation;
 import com.mkyong.annotation.MyAnnotation;
 
 @Aspect
