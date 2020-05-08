@@ -158,23 +158,30 @@ public class Anagram {
 	
 	public static void main(String[] args) throws IOException {
 //		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-		String output_path = System.getenv("HOME") + "/Descargas/temporal" + "/Solution.txt";
-		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(output_path));
-
-		int q = scanner.nextInt();
-		scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-		for (int qItr = 0; qItr < q; qItr++) {
-			String s = scanner.nextLine();
-
-			int result = anagram(s);
-
-			bufferedWriter.write(String.valueOf(result));
-			bufferedWriter.newLine();
+//		String output_path = System.getenv("HOME") + "/Descargas/temporal" + "/Solution.txt";
+//		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(output_path));
+//
+//		int q = scanner.nextInt();
+//		scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+//
+//		for (int qItr = 0; qItr < q; qItr++) {
+//			String s = scanner.nextLine();
+//
+//			int result = anagram(s);
+//
+//			bufferedWriter.write(String.valueOf(result));
+//			bufferedWriter.newLine();
+//		}
+//
+//		bufferedWriter.close();
+//		scanner.close();
+		
+		
+		String[] arr = new String[] {"aaabbb", "ab", "abc", "mnop", "xyyx", "xaxbbbxx"}; 
+		for (String s: arr) {
+			System.out.println(anagram(s) + ": " + s);
 		}
-
-		bufferedWriter.close();
-		scanner.close();
+		
 	}
 	
 }

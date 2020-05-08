@@ -2,7 +2,9 @@
 
 Problem Statement
 
-A colony of eight houses, represented as cells, are arranged in a straight line. Each day evry cell competes with its adjacent cells (neighbours). An integer value of 1 represents an active cell and value of 0 represents as inactive cell. If both the neighbours are either active or inactive, the cell becomes inactive the next day, otherwise it becomes active on the next day. 
+A colony of eight houses, represented as cells, are arranged in a straight line. Each day every cell competes with its adjacent cells (neighbours). 
+An integer value of 1 represents an active cell and value of 0 represents as inactive cell. If both the neighbours are either active or inactive, 
+the cell becomes inactive the next day, otherwise it becomes active on the next day. 
 
 The two cells on the ends have a single adjacent cell, so the other adjacent cell can be assumed to be always inactive. 
 Even after updating the cell state, its previous state is considered for updating the state of other cells. 
@@ -32,6 +34,22 @@ so the space complexity is O(n) where n is the number of cells.
 Here it is 8.
 
 Time complexity is O(n x m) where n is the number of cells and m is the number of days.
+
+
+SOLUTION:
+1 - active
+0 - Inactive
+both neighburs 1/0  ==>  inactive next day
+
+1:
+2:
+3:
+4:
+5:
+6:
+7:
+8:
+
 
 */
 package com.softland.example.algorithms;

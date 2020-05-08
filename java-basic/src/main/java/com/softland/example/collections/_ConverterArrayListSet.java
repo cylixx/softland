@@ -2,9 +2,12 @@ package com.softland.example.collections;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import java.util.Stack;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
@@ -41,8 +44,9 @@ public class _ConverterArrayListSet {
 
 		String cad = "La CASA del lago";
 		long upper2 = cad.chars().filter(c -> Character.isUpperCase(c)).count();  // para recorrer los caracteres de un String
-
-
+		char[] c =  cad.toCharArray();  // String to char array
+		
+		
 		int[] a = { 1, 5, 12, 3, -15, 52 };
 		Arrays.toString(a); // return a String representation of the Array  --- para imprimir un array
 		Arrays.stream(a);   // Returns a sequential DoubleStream with the specified array as its source. --- Para recorrer un array
@@ -55,6 +59,22 @@ public class _ConverterArrayListSet {
 		Set<Integer> setInteger = new TreeSet<Integer>(listInteger);   //  List<Integer>  to  Set<Integer>
 		int[] newArr = listInteger.stream().mapToInt(i->i).toArray();  //  List<Integer>  to  int[] Array  (more common)
 		int [] ints = listInteger.stream().mapToInt(Integer::intValue).toArray();   //  List<Integer>  to  int[] Array
+	
+	
+		LinkedList<Character> st = new LinkedList<Character>();
+		char cc = dictionary().get(st.pop());
+		if (cc == 'a') {
+			
+		}
+		
 	}
+	
+	static HashMap<Character, Character> dictionary() {
+        HashMap<Character, Character> dc = new HashMap<Character, Character>();
+        dc.put('{', '}');
+        dc.put('(', ')');
+        dc.put('[', ']');
+        return dc;
+    }
 
 }

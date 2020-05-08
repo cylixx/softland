@@ -6,11 +6,12 @@
 package com.softland.example.algorithmsAndDataStructures;
 
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class SortAlgorithms {
 
 	public static void main(String[] args) {
-		int a[] = {20, 5, 1, 16, 8, 10, 5};
+		int a[] = {20, 7, 1, 16, 8, 10, 5};
 		System.out.println("Input array: " + Arrays.toString(a));
 		
 		//System.out.println("Output selectionSort: " + Arrays.toString(selectionSort(a)));
@@ -22,6 +23,12 @@ public class SortAlgorithms {
 		System.out.println("Input array: " + Arrays.toString(b));
 		insertionSort(b);
 		System.out.println("Output selectionSort: " + Arrays.toString(b));
+		
+		System.out.println("\n--------------------- Merge Sort -------------------------");
+		int c[] = {20, 5, 1, 16, 8, 10, 5};
+		System.out.println("Input array: " + Arrays.toString(c));
+		mergeSort(c, 0, 6);
+		
 		
 	}
 
@@ -75,5 +82,71 @@ public class SortAlgorithms {
 			//System.out.println(Arrays.toString(ar));
 		}
 	}
+	
+	
+	//----------------------------------------------------
+	// Merge Sort   O(n Log n)
+	static void mergeSort(int [] arr, int left, int right) {
+		int[] tmp = new int[arr.length];
+		
+		if (left >= right) return;
+		
+		int midle = (left + right) / 2;
+		mergeSort(arr, left, midle);
+		mergeSort(arr, midle +1, right);
+		merge(arr, tmp, left, right);
+		//System.out.println(Arrays.stream(tmp).boxed().collect(Collectors.toList()));
+	}
+	static void merge(int[] arr, int[] tmp, int leftStart, int rightEnd) {
+		int size = rightEnd - leftStart +1;
+		int midle = (leftStart + rightEnd) / 2;
+		
+		int leftEnd = midle;
+		int rightStart = leftEnd +1; 
+		
+		int left = leftStart;
+		int right = midle + 1;
+		
+		int index = leftStart;
+		while(left <= leftEnd && right <= rightEnd) {
+			if (arr[left] <= arr[right]) {
+				tmp[index] = arr[left];
+				left++;
+			} else {
+				tmp[index] = arr[right];
+				right++;
+			}
+			index++;
+		}
+		
+		System.arraycopy(arr, left, tmp, index, leftEnd - left + 1);
+		System.arraycopy(arr, right, tmp, index, rightEnd - right + 1);
+		System.arraycopy(tmp, leftStart, arr, leftStart, size);
+		
+//		while (left < leftEnd - left +1) {
+//			tmp[index] = tmp[left];
+//			left++;
+//			index++;
+//		}
+//		while (right < rightEnd - right +1) {
+//			tmp[index] = arr[right];
+//			right++;
+//			index++;
+//		} 
+//		while (leftStart < size) {
+//			arr[leftStart] = tmp[leftStart];
+//			leftStart++;
+//		} 
+		
+		
+		System.out.println(
+//				Arrays.stream(tmp).boxed().collect(Collectors.toList())
+//				+ "   arr: " + 
+				Arrays.stream(arr).boxed().collect(Collectors.toList())
+				);
+	}
+	
+	
+	
 
 }

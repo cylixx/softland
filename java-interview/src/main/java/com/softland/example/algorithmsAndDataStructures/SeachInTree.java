@@ -99,6 +99,7 @@ public class SeachInTree {
 	
 	/*
 	 * DFS - Depth-First-Search
+	 * preOrderTraverseTree = Root, left, right
 	 */
 	static void DFS_traversal(Node node) {
 		if (node == null) return;
@@ -110,6 +111,7 @@ public class SeachInTree {
 	
 	//-----------------------------------OTHERS functions--------------------------------------------------------------
 	/*
+	 *XXX Esta mal porque debe ser una lista por cada nivel del arbol
 	 * 4.3
 	 * List of Depths: Given a binary tree, design an algorithm which creates a linked list of all the nodes
 	   at each depth (e.g., if you have a tree with depth D, you'll have D linked lists).

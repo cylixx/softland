@@ -18,7 +18,13 @@ https://github.com/spdeepak/hackerrank/tree/master/src/main/java/com/deepaksp/ha
 
         An integer p, denoting Jesse's position in tickets.
 
-        Sample Input 5 2 6 3 4 5 2 Sample Output 12 Sample Input 4 5 5 2 3 3 Sample Output 11
+        Sample 
+        Input 5 2 6 3 4 5 2 
+        Output 12 
+        
+        Sample 
+        Input 4 5 5 2 3 3 
+        Sample Output 11
 
 
  
