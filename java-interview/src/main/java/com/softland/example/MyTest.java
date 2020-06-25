@@ -1,8 +1,7 @@
+package com.softland.example;
 public class MyTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		
 		int moded = 5 % 2;
 		System.out.println("mod 10 % 7=" + 10 % 7);
@@ -41,6 +40,13 @@ public class MyTest {
 		System.out.println("97 / 26  = " + 97/26);
 		System.out.println("122 / 26  = " + 122/26);
 		//System.out.println("1 / 0  = " + 1/0);  //Error / by zero
+		
+		System.out.println("\n//--------------------------------------------------");
+		String output_path = System.getenv("OUTPUT_PATH"); 
+		System.out.println("output_path=" + output_path);
+		System.out.println("PATH=" + System.getenv("PATH"));
+		System.out.println("PATH=" + System.getenv("HOME"));
+		System.out.println("System.getenv()=" + System.getenv());
 		
 	}
 	

@@ -1,3 +1,4 @@
+package com.softland.example;
 
 /*
  * Sample solution hackerrank console

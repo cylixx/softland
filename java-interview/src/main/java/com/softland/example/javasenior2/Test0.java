@@ -71,11 +71,11 @@ import jdk.nashorn.internal.ir.ContinueNode;
 
 public class Test0 {
 
-public static void main(String... args) {
+	public static void main(String... args) {
 
-Pattern p = Pattern.compile("a{3}b?c*");
-Matcher m = p.matcher("aaab");
-boolean b = m.matches();
-System.out.println(b);
+		Pattern p = Pattern.compile("a{3}b?c*");
+		Matcher m = p.matcher("aaab");
+		boolean b = m.matches();
+		System.out.println(b);
+	}
 }
-} 

@@ -2,7 +2,7 @@
  * Reference
  * https://www.geeksforgeeks.org/reverse-a-string-in-java/
  */
-package com.softland.example;
+package com.softland.example.hackerrank;
 
 import java.util.ArrayList;
 import java.util.Collections;

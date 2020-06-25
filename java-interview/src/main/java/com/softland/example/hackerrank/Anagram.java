@@ -65,72 +65,18 @@ Test Case #06: Here S1 = "xaxb" and S2 = "bbxx". You must replace 'a' from S1 wi
  */
 package com.softland.example.hackerrank;
 
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
-import java.util.stream.Collectors;
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class Anagram {
 
-	// Complete the anagram function below.
-//	static int anagram1(String s) {
-//		int result = 0;
-//		Map<Character, Integer> map1 = new HashMap<Character, Integer>();
-////		Map<Character, Integer> map2 = new HashMap<Character, Integer>();
-//		
-//		char[] sToArray = s.toCharArray();
-//		Character currChar = null;
-//
-//		if (sToArray.length > 0 && (sToArray.length%2) == 0 ) {
-//			
-//			for(int i=0; i<sToArray.length; i++) {
-//				currChar = sToArray[i];
-//				
-//				if (i <= (sToArray.length/2) ) {  //primera mitad
-//					if (map1.containsKey(currChar)) {  //si ya contiene el caracter X, entonces sumale uno
-//						map1.put(currChar, map1.get(currChar)+1 ); 
-//					} else {
-//						map1.put(currChar, 1);  //si no contiene caracter X, entonces asignale 1   
-//					}
-//					
-//				} else {
-////					if (map2.containsKey(currChar)) {  //si ya contiene el caracter X, entonces sumale uno
-////						map2.put(currChar, map2.get(currChar)+1 ); 
-////					} else {
-////						map2.put(currChar, 1);  //si no contiene caracter X, entonces asignale 1   
-////					}
-//					if (map1.containsKey(currChar)) {
-//						if (map1.get(currChar) > 1) 
-//							map1.computeIfPresent(currChar, (k,v) -> v-1);
-//						else
-//							map1.remove(currChar);
-//					} else {
-//						result++; 
-//					}
-//					
-//				}
-//				
-//			}
-//			
-//		}  else {
-//			result = -1;
-//		}
-//		return result;
-//	}
-	
+		
 	 static int anagram(String s) {
 	       int result = 0;
 	        
 	        if ( (s.length()%2) == 0 ) {
 	            String temp1 = s.substring(0, s.length()/2 );
 	            String temp2 = s.substring(s.length()/2);
-//            ArrayList<Character> chars = new ArrayList<>(
-//	                     temp1.chars().mapToObj(e -> (char) e).collect(Collectors.toList()                    )
-//	            );
 	            
 	            ArrayList<Character> list1 = new ArrayList<Character>();
 	            for (char a : temp1.toCharArray()) {
@@ -152,34 +98,51 @@ public class Anagram {
 	        }
 	        return result;
 	    }
-
-	private static final Scanner scanner = new Scanner(System.in);
+	 
+	 
+	 /*
+	  * This solution is better because we save space 
+	  * since only need to define an array of 26 positions 
+	  * that are the letters of the alphabet (26 lowercase alphabets).
+	  * But this solution is only valid for letters if you include any other 
+	  * character you need to implement a hashtable.
+	  */
+	 static int anagram2(String s) {
+		 if (s.length() % 2 > 0) return -1;
+		 
+		 String s1 = s.substring(0, s.length()/2);
+		 String s2 = s.substring(s.length()/2);
+		 
+		 
+		 int[] arr = new int[26];
+		 
+		 for(int i=0; i < s1.length(); i++) {
+			 arr[s1.charAt(i) - 'a']++;
+			 arr[s2.charAt(i) - 'a']--;
+		 }
+		 //System.out.println(Arrays.toString(arr));
+		 
+		 int count = 0;
+		 for(int c: arr) {
+			 if (c > 0) {
+				 count = count + c;
+			 } 
+		 }
+		 return count;
+	 }
+	 
 
 	
 	public static void main(String[] args) throws IOException {
-//		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-//		String output_path = System.getenv("HOME") + "/Descargas/temporal" + "/Solution.txt";
-//		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(output_path));
-//
-//		int q = scanner.nextInt();
-//		scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-//
-//		for (int qItr = 0; qItr < q; qItr++) {
-//			String s = scanner.nextLine();
-//
-//			int result = anagram(s);
-//
-//			bufferedWriter.write(String.valueOf(result));
-//			bufferedWriter.newLine();
-//		}
-//
-//		bufferedWriter.close();
-//		scanner.close();
-		
 		
 		String[] arr = new String[] {"aaabbb", "ab", "abc", "mnop", "xyyx", "xaxbbbxx"}; 
 		for (String s: arr) {
 			System.out.println(anagram(s) + ": " + s);
+		}
+		
+		System.out.println("--------------------[Solution 2]-----------------------------");
+		for (String s: arr) {
+			System.out.println(anagram2(s) + ": " + s);
 		}
 		
 	}
