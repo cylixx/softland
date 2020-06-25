@@ -3,6 +3,7 @@ package com.example.springbootrestexample.service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -24,6 +25,7 @@ public class UserServiceImpl implements UserService{
 		users.add(new User(1, "Marco", new Date()));
 		users.add(new User(2, "Rosita", new Date()));
 		users.add(new User(3, "Selene", new Date()));
+		users.stream().collect(Collectors.toList());
 	}
 	
 	
