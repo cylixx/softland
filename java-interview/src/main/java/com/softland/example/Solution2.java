@@ -1,3 +1,4 @@
+package com.softland.example;
 import java.util.Scanner;
 
 public class Solution2 {

@@ -35,7 +35,7 @@ public class TestComparator {
 		Person[] personList = {
 				new Person("Rosita", 9),
 				new Person("Marco", 9),	
-				new Person("Selene", 10),
+				new Person("Selene", 3),
 				new Person("Nancy", 8)
 				};
 

@@ -1,11 +1,13 @@
 package com.softland.example;
 
+
 public class MaximoComunDivisor {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		float resultado1 = (float) Math.sqrt(10);
+		System.out.println(resultado1);
 		
 	}
 	

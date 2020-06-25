@@ -1,10 +1,11 @@
 /*
  * 4.2
-	Minimal Tree: Given a sorted (increasing order) array with unique integer elements, write an algo­
-	rithm to create a binary search tree with minimal height.
+	Minimal Tree:  (It will convert array to binary tree search)
+	Given a sorted (increasing order) array with unique integer elements, write an algorithm 
+	to create a binary search tree with minimal height.
 	Hints: #79, #73, #7 76
  */
-package com.softland.example.crackingCodeInterview;
+package com.softland.example.crackingCodeInterview.TreesAndGraphs;
 
 public class Q4_2_MinimalTree {
 

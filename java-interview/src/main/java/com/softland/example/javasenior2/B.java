@@ -4,6 +4,8 @@ public class B extends Thread {
 	
 	public static void main(String argv[]) {
 		B b = new B();
+		
+		b.start();
 		b.run();
 	}
 
