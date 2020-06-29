@@ -19,11 +19,15 @@ https://github.com/spdeepak/hackerrank/tree/master/src/main/java/com/deepaksp/ha
         An integer p, denoting Jesse's position in tickets.
 
         Sample 
-        Input 5 2 6 3 4 5 2 
+        Input: 5 
+        [2 6 3 4 5] 
+        2 
         Output 12 
         
         Sample 
-        Input 4 5 5 2 3 3 
+        Input: 4 
+        [5 5 2 3]
+        3 
         Sample Output 11
 
 
@@ -45,13 +49,27 @@ public class BuyingShowTickets {
 	
 		int[] arr = { 2, 6, 3, 4, 5 };   //inicializa array
 		int p = 2;
+		System.out.println("//---------------------[Solution #1]-------------------------");
 //		int[] arr = { 5, 5, 2, 3 };   //inicializa array
 //		int p = 3;
 //		Long units = calculateTimeTakenToGetAllTickets(arr, p);
-		//Long units = waitingTime(arr, p);
-		Long units = unitsTimeToBuyTickets(arr, p);
-		System.out.println("line" + Arrays.toString(arr) + ", p=" + p);
-		System.out.println("It took a total of <"+units+"> of time to purchase " + String.valueOf(arr[p]) );
+		Long u = waitingTime(arr, p);
+		System.out.println("line: " + Arrays.toString(arr) + ", p=" + p);
+		System.out.println("It took a total of <"+u+"> of time to purchase " + p );
+		
+		System.out.println("//---------------------[Solution #2 - My solution]-------------------------");
+		int[] arr2 = { 2, 6, 3, 4, 5 };   //inicializa array
+		int p2 = 2;
+		Long units = waitingTime2(arr2, p2);
+		System.out.println("line: " + Arrays.toString(arr2) + ", p=" + p2);
+		System.out.println("It took a total of <"+units+"> of time to purchase " + p2 );
+		
+		System.out.println("//---------------------[Solution #3 - My Refactor]-------------------------");
+		int[] arr3 = { 2, 6, 3, 4, 5 };   //inicializa array
+		int p3 = 2;
+		Long units3 = waitingTime3(arr3, p3);
+		System.out.println("line: " + Arrays.toString(arr3) + ", p=" + p3);
+		System.out.println("It took a total of <"+units3+"> of time to purchase " + p3 );
 	}
 
 	
@@ -118,7 +136,7 @@ public class BuyingShowTickets {
 	 * @param p
 	 * @return
 	 */
-	private static long unitsTimeToBuyTickets(int[] tickets, int p) {
+	private static long waitingTime2(int[] tickets, int p) {
 
 		long unitTime = 0;
 		int currentPlace = 0;
@@ -149,6 +167,43 @@ public class BuyingShowTickets {
 		}
 
 		return unitTime;
+	}
+	
+	
+	/*
+	 *------------------------------------------------------
+	 * By Cylixx - BEST Solution.   06/28/2020
+	 * En lugar de ir rotando las posiciones, lo que hacemos es hacer que el vendedor se mueva por cada
+	 * cliente en la fila (index) y le vamos restando un boleto a cada clientes hasta que tenga 0 boletos,
+	 * y mientras hacemos eso vamos contando cuantos ha vendido hasta llegar al cliente que queremos.
+	 * 
+	 * Big O(n*m) 
+	 *     n - clientes en la fila
+	 *     m - el numero de iteraciones
+	 */
+	private static long waitingTime3(int[] tickets, int p) {
+		int size = tickets.length;
+		int index = 0;
+		long counter = 0;
+		
+		while(tickets[p] > 0) {
+			if (tickets[index] == 0) {  //si el ticket en esa posicion es 0, entonces ya no locontamos, lo brincamos
+				index++;
+				continue;
+			}
+			
+			tickets[index]--;
+			counter++;
+			
+			if (tickets[p] == 0) { // paramos porque ya compro todos
+				break;
+			}
+			
+			index++;
+			if (index == size) index = 0; //si llegamos al final del areglo regresamos el index al inicio
+		}
+		
+		return counter;
 	}
 	
 }

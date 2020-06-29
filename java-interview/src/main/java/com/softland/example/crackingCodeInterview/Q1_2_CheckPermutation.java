@@ -12,7 +12,7 @@ public class Q1_2_CheckPermutation {
 //		String s1 = "abcd";
 //		String s2 = "cdeb";
 		String s1 = "big dog";
-		String s2 = "big God";
+		String s2 = "big god";
 
 		System.out.println("Input: ");
 		System.out.println(String.format("s1=%s, s2=%s", s1, s2));
