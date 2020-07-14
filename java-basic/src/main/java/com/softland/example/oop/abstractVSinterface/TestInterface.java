@@ -13,8 +13,8 @@
  * 4) Abstract class can provide the implementation of interface.	
  *    Interface can't provide the implementation of abstract class.
  * 
- * 5) The abstract keyword is used to declare abstract class.	
- *    The interface keyword is used to declare interface.
+ * 5) The "abstract" keyword is used to declare abstract class.	
+ *    The "interface" keyword is used to declare interface.
  * 
  * 6) An abstract class can extend another Java class and implement multiple Java interfaces.	
  *    An interface can extend another Java interface only.
@@ -31,7 +31,7 @@
  * Abstract class vs Interface
 
  * Type of methods: 
-      Interface can have only abstract methods. 
+      Interface can have only public abstract methods. 
       Abstract class can have abstract and non-abstract methods. From Java 8, it can have default and static methods also.
     
  * Final Variables: 
@@ -67,7 +67,7 @@
  *  Consider using interfaces if :
 
     1. You expect that unrelated classes would implement your interface. For example,many unrelated objects can implement Serializable interface.
-    2. You want to specify the behaviour of a particular data type, but not concerned about who implements its behaviour.
+    2. You want to specify the behavior of a particular data type, but not concerned about who implements its behavior.
     3. You want to take advantage of multiple inheritance of type.
 
 	In simple terms, I would like to use
@@ -82,6 +82,15 @@
 package com.softland.example.oop.abstractVSinterface;
 
 interface Flyable {
+	public int id = 1;   // by default is final
+	public static final String CONSTANT_BRAND = "MX123"; //Interface has only public, static and final variables modifiers.   
+	
+	//Illegal modifier for the interface method something; 
+	//only public, abstract, default, static and strictfp are permitted
+//	protected void something();
+	
+	//public abstract void fly();   // declaration OK
+	//private void doSomethig(); //Illegal modifier for the interface method doSomethig; only public, abstract, default, static and strictfp are permitted
 	void fly();
 }
 
@@ -89,7 +98,7 @@ class Bird2 implements Flyable {
 
 	@Override
 	public void fly() {
-		System.out.println("flying Bird");
+		System.out.println(Flyable.CONSTANT_BRAND +"-"+ id + " - flying Bird");
 	}
 	
 }

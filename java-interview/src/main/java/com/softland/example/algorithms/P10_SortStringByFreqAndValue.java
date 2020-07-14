@@ -10,27 +10,38 @@
 package com.softland.example.algorithms;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
 
 public class P10_SortStringByFreqAndValue {
 
 	public static void main(String[] args) {
 		
+		//String input = "ccbbbaa";
 		String input = "ccbbbaa";
 		System.out.println("input: " + input);
 
+		System.out.println("---------------------[Solution #1]--------------------------");
 		sortByFreq1(input);
-		System.out.println("-----------------------------------------------");
+		
+		System.out.println("---------------------[Solution #2]--------------------------");
 		sortByFreq2(input); 
+		
+		System.out.println("\n--------------------[Solution #3]---------------------------");
+		frequencySort(input);
+		
+		System.out.println("\n--------------------[Solution #4]---------------------------");
+		System.out.println(frequencySort2(input));
 	}
 	
 	
 	static void  sortByFreq1(String input) {
-		 Map<Character, Integer> freqMap = new HashMap<Character, Integer>();
+		Map<Character, Integer> freqMap = new HashMap<Character, Integer>();
 		List<Character> tmp = new ArrayList<Character>();
 		
 		char[] arr =  input.toCharArray();
@@ -94,6 +105,77 @@ public class P10_SortStringByFreqAndValue {
             System.out.print(i + " "); 
         } 
 		
+	}
+	
+	/* 
+	 * 2020/07/12
+	 * Esta solucion es usando un Tabla hash para almacenar la precuencia de los caracteres
+	 * 
+	 */
+	public static void frequencySort(String s) {
+		int n = s.length();
+		List<Character>[] res = new ArrayList[n + 1];  // arreglo de listas
+		int[] cntArr = new int[27]; // total alphabet characters
+		
+		// we count number of occurrences
+		for (int i = 0; i < n; ++i) {
+			cntArr[s.charAt(i) - 'a']++; 
+			res[i + 1] = new ArrayList<>();
+		}
+		
+		for (int i = 0; i < cntArr.length; ++i) {
+			if (cntArr[i] != 0) {
+				System.out.printf("cnt[%s] = %s \n", i, cntArr[i]); 
+				res[cntArr[i]].add((char) (i + 'a')); // add character to the array of list
+			}
+		}
+
+		StringBuilder sb = new StringBuilder();
+		System.out.println(Arrays.toString(res));
+		for (int i = n; i > 0; --i) {  // loop array starting by the end
+			if (!res[i].isEmpty()) {
+				for (char c : res[i]) {
+					//System.out.println("input has " + i + " " + c);
+					for (int j=0; j<i; j++) {
+						sb.append(c);
+					}
+				}
+			}
+		}
+		System.out.println("Order by frequency: " + sb.toString()); 
+	}
+	
+	
+	/*
+	 * 2020/07/12
+	 * BEST solution
+	 * Using a PriorityQueue
+	 * 
+	 * .I believe time complexity would be O(n log m) where n is the length of the string and m is the number of distinct characters in the string. 
+	 *  I think memory complexity would be O(m) where m is again the number of distinct characters in the string
+
+	 */
+	static String frequencySort2(String s) {
+		HashMap<Character, Integer> map = new HashMap<>();
+		
+		for (char c: s.toCharArray()) {
+			map.put(c, map.getOrDefault(c, 0) + 1);
+		}
+		System.out.println(map);
+		
+		PriorityQueue<Character> maxHeap = new PriorityQueue<>( (a, b) -> map.get(b) - map.get(a) ); 
+		maxHeap.addAll(map.keySet());
+		System.out.println(maxHeap); 
+		
+		StringBuilder sb = new StringBuilder();
+		while(!maxHeap.isEmpty()) {
+			char c = maxHeap.remove();
+			for (int i=0; i < map.get(c); i++) {
+				sb.append(c);
+			}
+		}
+		
+		return sb.toString();
 	}
 
 	

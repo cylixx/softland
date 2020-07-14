@@ -5,7 +5,9 @@ import java.util.Collections;
 
 /*
  * https://practice.geeksforgeeks.org/problems/ticket-sellers/0
- * There are N ticket sellers each of whom has a certain amount of tickets. The price of a ticket is the number of tickets remaining with the ticket seller. They can sell a total of K tickets. Find the maximum amount they can earn by selling K tickets.
+ * There are N ticket sellers each of whom has a certain amount of tickets. 
+ * The price of a ticket is the number of tickets remaining with the ticket seller. 
+ * They can sell a total of K tickets. Find the maximum amount they can earn by selling K tickets.
 
 Input:
 The first line of the input consists of a single integer T denoting the number of test cases. Each of the test case consists of two lines. First line of each test case consists of two integers N and K. The next line contains space separated N integers A[0], A[1], …, A[N-1] where A[i] denotes the number of ticket with ith ticket seller.
