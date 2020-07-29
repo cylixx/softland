@@ -67,6 +67,10 @@ public class _ConverterArrayListSet {
 			
 		}
 		
+		
+		int i= 010;
+		//System.out.println(i);
+		
 	}
 	
 	static HashMap<Character, Character> dictionary() {
