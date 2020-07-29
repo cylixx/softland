@@ -12,7 +12,8 @@
  *  Consider using abstract classes if :
 
     1. You want to share code among several closely related classes.
-    2. You expect that classes that extend your abstract class have many common methods or fields, or require access modifiers other than public (such as protected and private).
+    2. You expect that classes that extend your abstract class have many common methods or fields, 
+       or require access modifiers other than public (such as protected and private).
     3. You want to declare non-static or non-final fields.
 
 	In simple terms, I would like to use
@@ -23,8 +24,10 @@
 package com.softland.example.oop.abstractVSinterface;
 
 abstract class Animal {
+	public static final String CONSTANT_BRAND = "MX123"; //Abstract class can have final, non-final, static and non-static variables.	
 	public String name;
 	private int id;
+	protected String address;
 	
 	abstract String eat(); //Having an abstract method in your class will force you to declare your class as abstract itself
 	public void normalMethod() { //we can have another method definitions with another acces modify
@@ -35,14 +38,15 @@ abstract class Animal {
 class Bird extends Animal {
 	@Override
 	String eat() {
-		return "Bird eaten";
+		address = "House's bird";
+		return "Bird eaten" + " in " +  address;
 	}
 }
 
 class Cat extends Animal {
 	@Override
 	String eat() {
-		return "cat eaten";
+		return CONSTANT_BRAND + " cat eaten";
 	}
 }
 

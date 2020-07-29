@@ -93,8 +93,20 @@ public class _ReverseLinkedList {
  // Solution # 2 - Reversing but without use any structure data, only variables
     static SinglyLinkedListNode reverse2(SinglyLinkedListNode head) {
     	
+    	if (head == null) return null;
+    	SinglyLinkedListNode h = head;
+    	SinglyLinkedListNode n = h.next;
+    	h.next = null;
     	
-    	return null;
+    	while(n != null ) {
+    		SinglyLinkedListNode tmp = n.next;
+    		if (n.next == null) break;
+    		n.next = h;
+    		h = n;
+    		n = tmp;
+    	}
+    	
+    	return h;
     }
     
 
@@ -118,6 +130,17 @@ public class _ReverseLinkedList {
     	
     	System.out.println("Reverse List: ");
     	SinglyLinkedListNode r = reverse(list.head);
+    	print(r);
+    	
+    	
+    	System.out.println("----------------[Solution #2 - Reversing only with variables]-------------------");
+    	SinglyLinkedList list2 = new SinglyLinkedList();
+    	list2.insertNode(1);
+    	list2.insertNode(2);
+    	list2.insertNode(3);
+    	list2.insertNode(4);
+    	list2.insertNode(5);
+    	SinglyLinkedListNode r2 = reverse2(list2.head);
     	print(r);
     	
     }

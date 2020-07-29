@@ -1,6 +1,11 @@
 /*
  * 
- * You have been asked to help study the population of birds migrating across the continent. Each type of bird you are interested in will be identified by an integer value. Each time a particular kind of bird is spotted, its id number will be added to your array of sightings. You would like to be able to find out which type of bird is most common given a list of sightings. Your task is to print the type number of that bird and if two or more types of birds are equally common, choose the type with the smallest ID number.
+ * You have been asked to help study the population of birds migrating across the continent. 
+ * Each type of bird you are interested in will be identified by an integer value. 
+ * Each time a particular kind of bird is spotted, its id number will be added to your array of sightings. 
+ * You would like to be able to find out which type of bird is most common given a list of sightings. 
+ * Your task is to print the type number of that bird and if two or more types of birds are equally common, 
+ * choose the type with the smallest ID number.
 
 For example, assume your bird sightings are of types
 . There are two each of types and , and one sighting of type . Pick the lower of the two types seen twice: type
@@ -17,11 +22,8 @@ migratoryBirds has the following parameter(s):
 
 Input Format
 
-The first line contains an integer denoting
-, the number of birds sighted and reported in the array .
-The second line describes as
-
-space-separated integers representing the type numbers of each bird sighted.
+The first line contains an integer denoting, the number of birds sighted and reported in the array .
+The second line describes as space-separated integers representing the type numbers of each bird sighted.
 
 Constraints
 
@@ -47,25 +49,22 @@ Explanation 0
 The different types of birds occur in the following frequencies:
 
     Type 
-
-:
-bird
-Type
-:
-birds
-Type
-:
-bird
-Type
-:
-birds
-Type
-:
-
+	:
+	bird
+	Type
+	:
+	birds
+	Type
+	:
+	bird
+	Type
+	:
+	birds
+	Type
+	:
     bird
 
-The type number that occurs at the highest frequency is type
-, so we print
+The type number that occurs at the highest frequency is type, so we print
 
 as our answer.
 
@@ -73,13 +72,10 @@ Sample Input 1
 
 11
 1 2 3 4 5 4 3 2 1 3 4
-
 Sample Output 1
-
 3
 
 Explanation 1
-
 The different types of birds occur in the following frequencies:
 
     Type 
@@ -116,7 +112,7 @@ public class P08_MigratoryBirds {
         int type = 0, max = 0;
 
         for(Integer b : arr) {
-            freq[b-1] = freq[b-1] + 1;
+            freq[b-1]++;
             if(freq[b-1] == max) {
                 if(b < type)  type = b;
                 max = freq[b-1];
@@ -124,6 +120,7 @@ public class P08_MigratoryBirds {
                 type = b;
                 max = freq[b-1];
             }    
+            
         }
         return type;
     }

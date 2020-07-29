@@ -66,6 +66,7 @@ Test Case #06: Here S1 = "xaxb" and S2 = "bbxx". You must replace 'a' from S1 wi
 package com.softland.example.algorithms;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -74,56 +75,78 @@ public class P100_Anagram {
 
 	
 	static int anagram(String s) {
-		int result = 0;
+	       int result = 0;
+	        
+	        if ( (s.length()%2) == 0 ) {
+	            String temp1 = s.substring(0, s.length()/2 );
+	            String temp2 = s.substring(s.length()/2);
+	            
+	            ArrayList<Character> list1 = new ArrayList<Character>();
+	            for (char a : temp1.toCharArray()) {
+	                list1.add(a);
+	            }
+	            
+	            int index = 0;
+	            for (char c : temp2.toCharArray()) {
+	                index = list1.indexOf(c);
+	                if (index >= 0) {
+	                    list1.remove(index);
+	                } else {
+	                    result++;
+	                }
+	            }
+	            
+	        } else {
+	            result = -1;
+	        }
+	        return result;
+	    }
+	 
+	 
+	 /*
+	  * This solution is better because we save space 
+	  * since only need to define an array of 26 positions 
+	  * that are the letters of the alphabet (26 lowercase alphabets).
+	  * But this solution is only valid for letters if you include any other 
+	  * character you need to implement a hashtable.
+	  */
+	 static int anagram2(String s) {
+		 if (s.length() % 2 > 0) return -1;
+		 
+		 String s1 = s.substring(0, s.length()/2);
+		 String s2 = s.substring(s.length()/2);
+		 
+		 
+		 int[] arr = new int[26];
+		 
+		 for(int i=0; i < s1.length(); i++) {
+			 arr[s1.charAt(i) - 'a']++;
+			 arr[s2.charAt(i) - 'a']--;
+		 }
+		 //System.out.println(Arrays.toString(arr));
+		 
+		 int count = 0;
+		 for(int c: arr) {
+			 if (c > 0) {
+				 count = count + c;
+			 } 
+		 }
+		 return count;
+	 }
+	 
 
-		if ((s.length() % 2) == 0) {
-			String temp1 = s.substring(0, s.length() / 2);
-			String temp2 = s.substring(s.length() / 2);
-			System.out.printf("string1=%s, string2=%s", temp1, temp2);
-
-			List<Character> list1 = new LinkedList<Character>();
-			for (char a : temp1.toCharArray()) {
-				list1.add(a);
-			}
-
-			int index = 0;
-			for (char c : temp2.toCharArray()) {
-				index = list1.indexOf(c);
-//				System.out.println("index = " + index);
-				System.out.printf("\nChar = %s, index = %s", c, index);
-				if (index >= 0) {
-					list1.remove(index);
-					//System.out.println("\nlist1.remove("+index+"): " + list1.toString());
-				} else {
-					result++;
-				}
-			}
-
-		} else {
-			result = -1;
-		}
-		return result;
-	}
 	
 	public static void main(String[] args) throws IOException {
-//		Scanner scanner = new Scanner(System.in);
-//		
-//		int q = scanner.nextInt();
-//		scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-//		
-//		for (int i=0; i<q; i++) {
-//			String s = scanner.nextLine();
-//			int result = anagram(s);
-//			System.out.println(" ");
-//			System.out.println("Min number of changes: " + result);
-//		}
-//		scanner.close();
 		
-		Scanner in =  new Scanner(System.in);
-		System.out.println("Dame cadena: ");
-		String s = in.next();
-		int result = anagram(s);
-		System.out.println("\nMin number of changes: " + result);
-		in.close();
+		String[] arr = new String[] {"aaabbb", "ab", "abc", "mnop", "xyyx", "xaxbbbxx"}; 
+		for (String s: arr) {
+			System.out.println(anagram(s) + ": " + s);
+		}
+		
+		System.out.println("--------------------[Solution 2]-----------------------------");
+		for (String s: arr) {
+			System.out.println(anagram2(s) + ": " + s);
+		}
+		
 	}
 }

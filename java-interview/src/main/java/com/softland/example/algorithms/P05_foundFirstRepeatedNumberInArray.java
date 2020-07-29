@@ -32,9 +32,7 @@ public class P05_foundFirstRepeatedNumberInArray {
 		
 		Integer[] repeats = getDuplicates(numbers);
 		System.out.println("Areglo de numeros repetidos: ");
-		for(int i=0; i<repeats.length; i++) {
-			System.out.printf(repeats[i] + " ");
-		}
+		System.out.println(Arrays.toString(repeats));
 		
 		//Java 8
 		System.out.println("\nJava 8 - Numeros repetidos: ");
@@ -59,7 +57,7 @@ public class P05_foundFirstRepeatedNumberInArray {
 		Set<Integer> hashSet = new HashSet<Integer>();
 		
 		for(int i=0; i < array.length; i++) {
-			boolean unique = hashSet.add(array[i]); //Set regresa true si no contiene el elemento
+			boolean unique = hashSet.add(array[i]); //Set regresa true, cuando NO contiene el elemento
 	        if(!unique)
 	        	return array[i];  //duplicado
 		}

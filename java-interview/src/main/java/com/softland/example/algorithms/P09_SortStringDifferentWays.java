@@ -51,7 +51,7 @@ public class P09_SortStringDifferentWays {
           
           
         // Sort, ignoring case during sorting 
-        Arrays.sort(tempArray, new Comparator<Character>(){ 
+        Arrays.sort(tempArray, new Comparator<Character>(){
   
             @Override
             public int compare(Character c1, Character c2) 

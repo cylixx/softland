@@ -9,7 +9,13 @@
 
 package com.softland.example.algorithms;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
 
 public class P103_SortListByElementsFrequency {
 
@@ -19,6 +25,18 @@ public class P103_SortListByElementsFrequency {
 		System.out.println("Input: " + Arrays.toString(a));
 		//Print: [4 4 4 3 3 6 6 1]
 
+		System.out.println("-------------{Solution #1}-------------------------");
+		System.out.println(Arrays.toString( sortByFrequency(a) ));
+		
+		System.out.println("-------------{Solution #2}-------------------------");
+		System.out.println(Arrays.toString( sortByFreq(a) ));
+		
+		System.out.println("-------------{Solution #3}-------------------------");
+		System.out.println(Arrays.toString( sortByFreq2(a) ));
+		
+	}
+
+	public static int[] sortByFrequency(int a[]) {
 		sort(a); //ordered array in ascending order
 		//Arrays.sort(a);
 		System.out.println("Sort array: " + Arrays.toString(a));
@@ -46,17 +64,23 @@ public class P103_SortListByElementsFrequency {
 		System.out.println("Sort matrix by frequency elements: ");
 		printMatrix(b); 
 		
-		System.out.println("Result: ");
+		//System.out.println("Result: ");
 		//print values accord with its frequency
+		int ind = 0;
+		int[] res = new int[b.length];
 		for(int i=0; i<b.length; i++) {
 			
 			for (int k=0; k<b[i][1]; k++) {
-				System.out.printf(" %d", b[i][0]);
+				//System.out.printf(" %d", b[i][0]);
+				res[ind] = b[i][0];
+				ind++;
 			}
 		}
 		
+		return res;
 	}
-
+	
+	
 	//Sort matrix by frequency (second element in the array)
 	public static void sortByFreq(int arr[][]) {
 		int minVal, minFreq;
@@ -99,6 +123,66 @@ public class P103_SortListByElementsFrequency {
 		}
 		System.out.println("");
 	}
+	
+	//-------------------------------------------------------
+	//20200714 - Solution #2
+	// Best solution
+	// NOTA: esta solucion no toma en cuenta cuando 2 numeros tienen la misma frecuencia
+	
+	public static int[] sortByFreq(int[] arr) {
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+		
+		for (int n: arr) {
+			map.put(n, map.getOrDefault(n, 0) + 1);
+		}
+		
+		System.out.println(map.toString());
+		PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> map.get(b) - map.get(a) );
+		pq.addAll(map.keySet());
+		System.out.println(String.format("Piority Queue: %s, peek: %s", pq.toString(), pq.peek() ) ); 
+		
+		List<Integer> res = new ArrayList<Integer>();
+		while (!pq.isEmpty()) {
+			int n = pq.remove();
+			for (int i=0; i < map.get(n); i++) {
+				res.add(n);
+			}
+		}
+		
+		return res.stream().mapToInt(i -> i).toArray();
+	}
+	
+	// 20200714 -  Solution #3
+	// Esta soluciuon toma en cuenta cuando 2 numeros tienen la misma frecuencia.
+	public static int[] sortByFreq2(int[] arr) {
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+		
+		for (int n: arr) {
+			map.put(n, map.getOrDefault(n, 0) + 1);
+		}
+		
+		System.out.println(map.toString());
+		PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>(
+				(a, b) -> { 
+					if ( a.getValue() < b.getValue() ) return 1;
+					else if ( a.getValue() > b.getValue() ) return -1;
+					return a.getKey().compareTo(b.getKey());
+				});
+		pq.addAll(map.entrySet());
+		System.out.println(String.format("Piority Queue: %s, peek: %s", pq.toString(), pq.peek() ) ); 
+		
+		List<Integer> res = new ArrayList<Integer>();
+		while (!pq.isEmpty()) {
+			Map.Entry<Integer, Integer> n = pq.remove();
+			for (int i=0; i < n.getValue(); i++) {
+				res.add(n.getKey());
+			}
+		}
+		
+		return res.stream().mapToInt(i -> i).toArray();
+	}
+	
+	
 	
 	
 }
