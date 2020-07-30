@@ -80,6 +80,9 @@ public class _ConverterArrayListSet {
 		System.out.println(Arrays.toString(cc));
 		System.out.println(Arrays.toString( sortByFreq(cc) ));
 	
+		
+		StringBuffer st = new StringBuffer(cad);
+		st.toString().toLowerCase().equals(null);
 	}
 	
 	/*

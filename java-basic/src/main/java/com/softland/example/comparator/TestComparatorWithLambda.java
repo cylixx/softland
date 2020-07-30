@@ -11,7 +11,7 @@ import java.util.List;
 
 class Person3 {
 	String name;
-	int score;
+	Integer score;
 	
 	public Person3(String name, int score) {
 		super();
@@ -24,10 +24,11 @@ class Person3 {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getScore() {
+	
+	public Integer getScore() {
 		return score;
 	}
-	public void setScore(int score) {
+	public void setScore(Integer score) {
 		this.score = score;
 	}
 	@Override
@@ -73,6 +74,24 @@ public class TestComparatorWithLambda {
 	    
 	    //Let's print the sorted list
 	    System.out.println(employees);
+	    
+	    
+	    System.out.println("-------------------------------------------");
+	    List<Person3> employees2  = getPerson3();
+	  //lambda
+	   // employees2.sort((Person3 o1, Person3 o2)->o1.getScore().compareTo(o2.getScore()));
+	   // or
+	    
+	  //lambda
+	    employees2.sort( (o1, o2) -> o1.getScore().compareTo(o2.getScore()) );
+	    System.out.println(employees2.toString());
+	    
+	    //Lambda expression to sort a List using their score, reversed order.
+	    System.out.println("--------------------- Reverse order ---------------------------");
+	    Comparator<Person3> salaryComparator = (o1, o2) -> o1.getScore().compareTo(o2.getScore());
+	    employees2.sort(salaryComparator.reversed());
+	    System.out.println(employees2.toString());
+	    
 	}
 	
 }

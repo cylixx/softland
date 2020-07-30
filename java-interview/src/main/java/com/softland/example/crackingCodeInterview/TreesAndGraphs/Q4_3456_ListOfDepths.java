@@ -253,7 +253,7 @@ it as we go?
 		// check current
 		if (this.lastPrinted != null && n.data <= this.lastPrinted) {
 			return false;
-		}https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://translate.google.com/
+		}
 		lastPrinted = n.data;
 		
 		// check / recurse right

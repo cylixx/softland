@@ -72,7 +72,7 @@ public class MyGraph {
 	}
 	
 	private boolean hasPathBFS(Node sourse, Node destination) {
-		LinkedList<Node> nextToVisit = new LinkedList<Node>();
+		LinkedList<Node> nextToVisit = new LinkedList<Node>(); // define a QUEUE
 		HashSet<Integer> visited = new HashSet<Integer>();
 		nextToVisit.add(sourse);
 		while(!nextToVisit.isEmpty()) {
@@ -116,8 +116,9 @@ public class MyGraph {
 		System.out.println("--------- print graph--------");
 		graph.printGraph();
 		
-		System.out.println("hasPathDFS (1, 4) ? " + graph.hasPathDFS(2, 3));
+		System.out.println("hasPathDFS (2, 3) ? " + graph.hasPathDFS(2, 3));
 		System.out.println("hasPathBFS (1, 4) ? " + graph.hasPathBFS(1, 4));
+		System.out.println("hasPathBFS (1, 3) ? " + graph.hasPathBFS(1, 3));
 	}
 
 }

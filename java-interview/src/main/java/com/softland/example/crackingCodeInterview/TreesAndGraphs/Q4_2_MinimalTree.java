@@ -68,7 +68,7 @@ public class Q4_2_MinimalTree {
 		
 			if (node.left != null) inOrderTraversal(node.left);
 			
-			System.out.println(node.data + " ");
+			System.out.printf(node.data + " ");
 			
 			if (node.right != null) inOrderTraversal(node.right);
 		}
