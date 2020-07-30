@@ -123,7 +123,6 @@ public class _ConverterArrayListSet {
 		
 		if (stack.isEmpty()) System.out.println("String valid: true");
 		else System.out.printf("String invalid character <%s>", stack.peek());
-	
 	}
 	
 	static HashMap<Character, Character> dictionary() {
