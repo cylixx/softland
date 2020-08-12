@@ -48,6 +48,9 @@ public class MyTest {
 		System.out.println("PATH=" + System.getenv("HOME"));
 		System.out.println("System.getenv()=" + System.getenv());
 		
+		if (-26 > 0) System.out.println("true");
+		else System.out.println("false");
+		
 	}
 	
 

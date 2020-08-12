@@ -19,16 +19,16 @@ public class StreamExamples {
 	}
 	
 	static void streamWithNumbers() {
-		List<Integer> list = Arrays.asList(3, 6, 7, 9, 12, 34, 2, 6, 59, 23);
+		List<Integer> list = Arrays.asList(3, 6, 7, 9, 12, 34, 2, 3, 6, 59, 23);
 		System.out.println(list.toString());
 
-		System.out.println("\n========[ Stream Map ]");
+		System.out.println("\n========[ Stream Map - pow elements]");
 		list.stream().map(x -> x*x).forEach(y -> System.out.printf("%d ", y));
 		
-		System.out.println("\n========[ Stream forEach ]");
+		System.out.println("\n========[ Stream forEach - delete duplicate values ]");
 		list.stream().distinct().sorted().forEach(j -> System.out.printf("%d ", j));
 		
-		System.out.println("\n========[ Stream filter ]");
+		System.out.println("\n========[ Stream filter - obtanin elements less that 10]");
 		list.stream().filter(x -> x<=10).forEach(j -> System.out.printf("%d ", j));
 		
 		int sum = list.stream().filter(x -> (x>=10 && x<=50)).map(y -> y-1).reduce(0, (element1, element2) -> element1 + element2);

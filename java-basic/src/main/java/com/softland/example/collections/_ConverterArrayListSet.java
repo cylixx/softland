@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.TreeSet;
@@ -46,6 +47,8 @@ public class _ConverterArrayListSet {
 		long upper2 = cad.chars().filter(c -> Character.isUpperCase(c)).count();  // para recorrer los caracteres de un String
 		char[] c =  cad.toCharArray();  // String to char array
 		List<Character> chl = cad.chars().mapToObj(ch -> (char) ch).collect(Collectors.toList());  // String to List<Character>
+		List<Character> cadtolist = cad.chars().sorted().mapToObj(ch -> (char)ch).collect(Collectors.toList()); // ordena los caracteres de una cadena
+		System.out.println("Sorted characters in string: " + cadtolist.toString());  
 		
 		
 		int[] a = { 1, 5, 12, 3, -15, 52 };
@@ -60,7 +63,6 @@ public class _ConverterArrayListSet {
 		Set<Integer> setInteger = new TreeSet<Integer>(listInteger);   //  List<Integer>  to  Set<Integer>
 		int[] newArr = listInteger.stream().mapToInt(i->i).toArray();  //  List<Integer>  to  int[] Array  (more common)
 		int [] ints = listInteger.stream().mapToInt(Integer::intValue).toArray();   //  List<Integer>  to  int[] Array
-	
 	
 		// reverse collection, list, array 
 		Collections.reverse(listInteger);  //reverse List<Integer>
@@ -83,6 +85,18 @@ public class _ConverterArrayListSet {
 		
 		StringBuffer st = new StringBuffer(cad);
 		st.toString().toLowerCase().equals(null);
+
+		
+		String s = "9001 discuss.leetcode.com";
+		int visits = Integer.valueOf(s.substring(0, s.indexOf(" ") ));
+        StringBuilder domain = new StringBuilder( s.substring(s.indexOf(" ") +1) );
+        System.out.println(String.format("visits=%s, domain='%s'", visits, domain));
+        
+        String[] aDomains = {"9001 discuss.leetcode.com", "9001 leetcode.com", "9001 com"};
+        List<String> lDomains = subdomainVisits(aDomains);
+        System.out.println(lDomains.toString());
+        
+        int num = Integer.MAX_VALUE;  //max value int
 	}
 	
 	/*
@@ -155,5 +169,35 @@ public class _ConverterArrayListSet {
 		
 		return res.stream().mapToInt(i -> i).toArray();
 	}
+	
+	
+	public static List<String> subdomainVisits(String[] cpdomains) {
+		if (cpdomains == null || cpdomains.length == 0) return null;
+        
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		ArrayList<String> res = new ArrayList<String>();
+        
+        for (String s : cpdomains) {
+            String[] arr = s.split(" ");
+            //int visits = Integer.valueOf(s.substring(0, s.indexOf(" ") ));
+            //String domain = s.substring(s.indexOf(" ") + 1) ;
+        	int visits = Integer.valueOf(arr[0]);
+        	String domain = arr[1];
+        	System.out.println(String.format("visits=%s, domain='%s'", visits, domain));
+            
+            while (domain.indexOf(".") > 0) {
+                map.put(domain, map.getOrDefault(domain, 0) + visits );
+                domain = domain.substring(domain.indexOf(".") + 1) ;
+            } 
+            map.put(domain, map.getOrDefault(domain, 0) + visits );
+                    
+        }
+        
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            res.add(entry.getValue() + " " + entry.getKey());
+        }
+        
+        return res;
+    }
 
 }

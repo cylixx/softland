@@ -79,7 +79,7 @@ public class SortAlgorithms {
 				j--;
 			}
 			ar[j] = index;
-			//System.out.println(Arrays.toString(ar));
+			System.out.println(Arrays.toString(ar));
 		}
 	}
 	

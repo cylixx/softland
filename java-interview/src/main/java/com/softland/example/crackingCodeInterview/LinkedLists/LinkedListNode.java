@@ -85,7 +85,8 @@ public class LinkedListNode {
 		
 		System.out.print("[");
 		while(n != null) {
-			System.out.print(String.format("%s  ", n.data));
+			//System.out.print(String.format("%s  ", n.data));
+			System.out.printf("%s  ", n.data);
 			n = n.next;
 		}
 		System.out.print("] \n");
@@ -94,7 +95,8 @@ public class LinkedListNode {
 	void printList(LinkedListNode node) {
 		System.out.print("[");
 		while(node != null) {
-			System.out.print(String.format("%s  ", node.data));
+			//System.out.print(String.format("%s  ", node.data));
+			System.out.printf("%s  ", node.data);
 		    node = node.next;
 		}
 		System.out.print("] \n");

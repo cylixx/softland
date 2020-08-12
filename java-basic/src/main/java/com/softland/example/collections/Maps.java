@@ -20,7 +20,6 @@ public class Maps {
 //		data.put("2", "Feb");
 //		data.put("3", "Mar");
 		dummyMap(data);
-		data.
 		
         // Un poco mas rapido
 		System.out.println("===== 1. Java 8 with foreach");

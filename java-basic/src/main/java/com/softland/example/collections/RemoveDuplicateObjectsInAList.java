@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class RemoveDuplicateObjects {
+public class RemoveDuplicateObjectsInAList {
 
 	public static void main(String[] args) {
 		
@@ -16,12 +16,15 @@ public class RemoveDuplicateObjects {
 		list.add(new Blog("C", "Ram", "mnc"));
 		list.add(new Blog("A", "Marco", "abc"));
 		list.add(new Blog("B", "Sandra", "xal"));
+		System.out.println("----------- Original list data: -------------");
 		System.out.println(list.toString());
 		
 		
-		Set<Blog> s = new HashSet<Blog>();
-		s.addAll(list);
+		Set<Blog> s = new HashSet<Blog>(list);
+		System.out.println("HashSet output: " + s.toString());
+		//s.addAll(list);  //otra forma de asignar todos los elementos de la lista
 		
+		System.out.println("----------- Remove duplicate data: -------------");
 		//list.clear();
 		List<Blog> list2 = s.stream().collect(Collectors.toList());
 		System.out.println(list2.toString());  
@@ -109,7 +112,7 @@ class Blog {
 
 	@Override
 	public String toString() {
-		return String.format("Blog [title=%s, author=%s, url=%s]", title, author, url);
+		return String.format("{title=%s, author=%s, url=%s}", title, author, url);
 	}
 	
 }
