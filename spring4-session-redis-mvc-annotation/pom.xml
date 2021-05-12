@@ -11,7 +11,7 @@
 	<properties>
 		<jdk.version>1.8</jdk.version>
 		<spring.version>4.3.10.RELEASE</spring.version>
-		<spring.security.version>4.2.3.RELEASE</spring.security.version>
+		<spring.security.version>5.2.10.RELEASE</spring.security.version>
 		<jstl.version>1.2</jstl.version>
 	</properties>
 
@@ -83,7 +83,7 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
-			<version>4.0.3.RELEASE</version>
+			<version>5.2.10.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
