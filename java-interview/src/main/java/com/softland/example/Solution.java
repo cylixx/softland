@@ -20,7 +20,7 @@ public class Solution {
 	public static void main(String[] args) throws IOException {
 		// Escribe el resultado en un archivo
 		//BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-		String output_path = System.getenv("HOME") + "/Descargas/temporal" + "/Solution.txt";
+		String output_path = System.getenv("HOME") + "/Downloads/temp" + "/Solution.txt";
 		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(output_path));
 
 		int p = scanner.nextInt();

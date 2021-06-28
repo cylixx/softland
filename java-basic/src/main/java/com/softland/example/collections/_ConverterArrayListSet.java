@@ -64,6 +64,11 @@ public class _ConverterArrayListSet {
 		int[] newArr = listInteger.stream().mapToInt(i->i).toArray();  //  List<Integer>  to  int[] Array  (more common)
 		int [] ints = listInteger.stream().mapToInt(Integer::intValue).toArray();   //  List<Integer>  to  int[] Array
 	
+		int[] distance = new int[5];
+		Arrays.fill(distance, -1);  // inicializa Array con -1 en todas las posiciones
+		System.out.println(Arrays.toString(distance));
+		
+		
 		// reverse collection, list, array 
 		Collections.reverse(listInteger);  //reverse List<Integer>
 		Collections.reverse(Arrays.asList(ints)); //reverse int[]
@@ -74,6 +79,9 @@ public class _ConverterArrayListSet {
 		System.out.println("common elements: " + findCommon3(aa, bb));
 		
 		validString();
+		
+		//define a matrix of adjacents (up, down, left and right)
+		int[][] adjacents = {{1,0}, {-1, 0}, {0, -1}, {0, 1} };
 		
 		
 		//order array by frequency

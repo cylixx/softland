@@ -13,6 +13,11 @@ public class Test {
 		int value = 0x2222;
 		
 		System.out.println(value & mask);
+		
+		if (0 > -1230)  System.out.println("true");
+		else System.out.println("false");
+		
+		
 	}
 
 	
